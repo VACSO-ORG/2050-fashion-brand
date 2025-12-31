@@ -1,0 +1,30 @@
+# 2050 Fashion Brand - Cursor Rules
+
+## Project Context
+This is a high-end sustainable fashion brand called "2050" built on Shopify.
+
+## Shopify Development Guidelines
+- Use Shopify Liquid templating language for theme development
+- Follow Shopify theme best practices and conventions
+- Maintain accessibility standards (WCAG 2.1 AA)
+- Optimize for performance (Core Web Vitals)
+- Ensure mobile-first responsive design
+
+## Code Style
+- Use semantic HTML5
+- Follow BEM naming convention for CSS classes
+- Use modern JavaScript (ES6+)
+- Maintain consistent indentation (2 spaces)
+
+## Sustainability Focus
+- Optimize images and assets for performance
+- Minimize JavaScript bundle size
+- Use efficient CSS (avoid unnecessary animations)
+- Consider carbon footprint in design decisions
+
+## File Organization
+- Keep theme files organized in standard Shopify structure
+- Use snippets for reusable components
+- Use sections for customizable page elements
+- Maintain clean separation of concerns
+

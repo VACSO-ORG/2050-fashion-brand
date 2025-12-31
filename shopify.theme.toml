@@ -1,0 +1,12 @@
+# Shopify Theme Configuration
+# This file configures your Shopify theme development environment
+
+[theme]
+id = ""
+name = "2050 Fashion Brand"
+role = "development"
+
+[build]
+command = "npm run build"
+watch = ["src/**/*"]
+
