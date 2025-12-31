@@ -1,0 +1,17 @@
+{%- liquid
+  assign target = product.selected_or_first_available_variant
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price
+-%}
+
+<div class="price{% if compare_at_price > price %} price--on-sale{% endif %}{% if price == 0 %} price--free{% endif %}">
+  {%- if price == 0 -%}
+    <span class="price__regular">{{ 'products.product.price.free' | t }}</span>
+  {%- elsif compare_at_price > price -%}
+    <span class="price__regular">{{ price | money }}</span>
+    <span class="price__compare">{{ compare_at_price | money }}</span>
+  {%- else -%}
+    <span class="price__regular">{{ price | money }}</span>
+  {%- endif -%}
+</div>
+
