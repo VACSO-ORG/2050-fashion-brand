@@ -1,0 +1,64 @@
+<div class="cart-notification" id="cart-notification" role="dialog" aria-modal="true" aria-labelledby="cart-notification-title" hidden>
+  <div class="cart-notification__header">
+    <h2 id="cart-notification-title" class="cart-notification__title">Item added to your cart</h2>
+    <button type="button" class="cart-notification__close" aria-label="Close cart notification">
+      {% render 'icon-close' %}
+    </button>
+  </div>
+  <div class="cart-notification__content" id="cart-notification-content">
+    <!-- Cart items will be inserted here -->
+  </div>
+  <div class="cart-notification__footer">
+    <a href="{{ routes.cart_url }}" class="button button--full-width">View cart</a>
+  </div>
+</div>
+
+<style>
+  .cart-notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    max-width: 40rem;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    padding: var(--spacing-md);
+  }
+
+  .cart-notification[hidden] {
+    display: none;
+  }
+
+  .cart-notification__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cart-notification__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .cart-notification__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .cart-notification__content {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cart-notification__footer {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+  }
+</style>
+

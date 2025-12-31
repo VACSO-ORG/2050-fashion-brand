@@ -120,7 +120,7 @@
     </a>
 
     {%- if settings.cart_type == 'notification' -%}
-      {%- render 'cart-notification', color_scheme: settings.cart_notification_color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
+      {%- render 'cart-notification' -%}
     {%- endif -%}
 
     {% sections 'header-group' %}

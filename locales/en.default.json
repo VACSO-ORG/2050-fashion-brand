@@ -1,0 +1,59 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "share": {
+      "share_url": "Share URL",
+      "close": "Close",
+      "copy_to_clipboard": "Copy to clipboard",
+      "success_message": "Link copied to clipboard"
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "refresh_page": "Refresh page",
+    "link_messages": {
+      "new_window": "Opens in a new window"
+    }
+  },
+  "sections": {
+    "cart": {
+      "errors": {
+        "error": "There was an error while updating your cart. Please try again.",
+        "quantity_error": "You can only add {{ quantity }} of this item to your cart."
+      }
+    },
+    "featured_collection": {
+      "view_all": "View all"
+    },
+    "slideshow": {
+      "pause_slideshow": "Pause slideshow",
+      "play_slideshow": "Play slideshow"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "value_unavailable": "{{ value }} is unavailable",
+      "product_variants": "Product variants",
+      "price": {
+        "regular_price": "Regular price",
+        "free": "Free"
+      },
+      "quantity": {
+        "label": "Quantity",
+        "decrease": "Decrease quantity for {{ product }}",
+        "increase": "Increase quantity for {{ product }}"
+      },
+      "media": {
+        "gallery_viewer": "Product gallery",
+        "image_available": "Image {{ index }}"
+      }
+    }
+  }
+}
+

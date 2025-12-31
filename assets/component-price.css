@@ -1,0 +1,33 @@
+/* Price Component */
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.price--large {
+  font-size: 2.4rem;
+}
+
+.price--on-sale .price__regular {
+  color: var(--color-primary);
+}
+
+.price__regular {
+  color: var(--color-text);
+}
+
+.price__compare {
+  text-decoration: line-through;
+  opacity: 0.6;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.price--free .price__regular {
+  color: var(--color-sustainability);
+}
+

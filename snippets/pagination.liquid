@@ -1,0 +1,76 @@
+{%- if paginate.pages > 1 -%}
+  <nav class="pagination" role="navigation" aria-label="Pagination">
+    <ul class="pagination__list">
+      {%- if paginate.previous -%}
+        <li class="pagination__item">
+          <a href="{{ paginate.previous.url }}" class="pagination__link pagination__link--prev" aria-label="Previous page">
+            <span aria-hidden="true">&laquo; Previous</span>
+          </a>
+        </li>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        {%- if part.is_link -%}
+          <li class="pagination__item">
+            <a href="{{ part.url }}" class="pagination__link">{{ part.title }}</a>
+          </li>
+        {%- else -%}
+          <li class="pagination__item">
+            <span class="pagination__link pagination__link--current" aria-current="page">{{ part.title }}</span>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if paginate.next -%}
+        <li class="pagination__item">
+          <a href="{{ paginate.next.url }}" class="pagination__link pagination__link--next" aria-label="Next page">
+            <span aria-hidden="true">Next &raquo;</span>
+          </a>
+        </li>
+      {%- endif -%}
+    </ul>
+  </nav>
+{%- endif -%}
+
+<style>
+  .pagination {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .pagination__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    list-style: none;
+  }
+
+  .pagination__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4rem;
+    height: 4rem;
+    padding: 0 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 1.4rem;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .pagination__link:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .pagination__link--current {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+  }
+</style>
+

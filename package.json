@@ -4,12 +4,12 @@
   "description": "High-end sustainable fashion brand - 2050",
   "type": "module",
   "scripts": {
-    "dev": "shopify theme dev",
-    "build": "shopify theme build",
-    "deploy": "shopify theme deploy",
-    "check": "shopify theme check",
+    "dev": "npx @shopify/cli theme dev",
+    "build": "npx @shopify/cli theme build",
+    "deploy": "npx @shopify/cli theme deploy",
+    "check": "npx @shopify/cli theme check",
     "mcp": "npx -y @shopify/dev-mcp@latest",
-    "setup": "npm install && shopify login"
+    "setup": "npm install && npx @shopify/cli login"
   },
   "keywords": [
     "shopify",

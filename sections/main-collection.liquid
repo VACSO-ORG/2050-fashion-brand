@@ -101,6 +101,7 @@
           <button type="button" class="collection__filter-toggle" aria-label="Open filters">
             <span>Filters</span>
             {% render 'icon-filter' %}
+            {%- assign active_filters_count = collection.filters | where: 'active_values', true | size -%}
             {%- if active_filters_count > 0 -%}
               <span class="collection__filter-count">{{ active_filters_count }}</span>
             {%- endif -%}
@@ -134,9 +135,11 @@
       {%- endfor -%}
     </div>
 
-    {%- if paginate.pages > 1 -%}
-      {% render 'pagination', paginate: paginate %}
-    {%- endif -%}
+    {%- paginate collection.products by section.settings.products_per_page -%}
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}
+    {%- endpaginate -%}
   </div>
 </div>
 
