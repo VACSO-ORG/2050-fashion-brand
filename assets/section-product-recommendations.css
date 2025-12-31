@@ -1,0 +1,15 @@
+/* Product Recommendations Section */
+
+.product-recommendations {
+  padding: var(--spacing-xl) 0;
+}
+
+.product-recommendations__heading {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.product-recommendations__grid {
+  gap: var(--spacing-md);
+}
+

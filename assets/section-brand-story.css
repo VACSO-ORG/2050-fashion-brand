@@ -1,0 +1,58 @@
+/* Brand Story Section */
+
+.brand-story {
+  padding: var(--spacing-xl) 0;
+}
+
+.brand-story__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.brand-story__media {
+  order: 1;
+}
+
+.brand-story__media--right {
+  order: 2;
+}
+
+.brand-story__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  object-fit: cover;
+}
+
+.brand-story__content {
+  order: 2;
+}
+
+.brand-story__media--right ~ .brand-story__content {
+  order: 1;
+}
+
+.brand-story__heading {
+  margin-bottom: var(--spacing-md);
+}
+
+.brand-story__text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+@media screen and (max-width: 989px) {
+  .brand-story__wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .brand-story__media,
+  .brand-story__content {
+    order: initial;
+  }
+}
+

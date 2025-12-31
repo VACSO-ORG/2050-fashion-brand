@@ -43,7 +43,7 @@
       "type": "brand-story",
       "settings": {
         "heading": "The 2050 Vision",
-        "content": "We believe fashion should be timeless, sustainable, and accessible. Every piece in our collection is designed to last, crafted with eco-friendly materials, and made with ethical practices.",
+        "content": "<p>We believe fashion should be timeless, sustainable, and accessible. Every piece in our collection is designed to last, crafted with eco-friendly materials, and made with ethical practices.</p>",
         "image": "",
         "image_position": "right"
       }
