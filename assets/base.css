@@ -1,33 +1,47 @@
-/* 2050 Fashion Brand - Base Styles */
+/* by 2050 - Luxury Fashion Brand - Base Styles */
 
 :root {
-  --color-primary: #000000;
-  --color-secondary: #ffffff;
-  --color-background: #ffffff;
+  /* Luxury Color Palette - Sophisticated & Modern */
+  --color-primary: #0a0a0a;
+  --color-secondary: #f5f5f0;
+  --color-background: #fafaf8;
   --color-text: #1a1a1a;
-  --color-border: #e5e5e5;
+  --color-text-light: #6b6b6b;
+  --color-border: #d4d4d0;
+  --color-accent: #c9a961; /* Refined gold accent */
+  --color-accent-dark: #a68a4f;
   --color-success: #2d5016;
   --color-sustainability: #4a7c59;
   
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --font-heading: 'Playfair Display', Georgia, serif;
+  /* Premium Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Cormorant Garamond', serif;
   
+  /* Generous Spacing for Luxury Feel */
   --spacing-unit: 1rem;
   --spacing-xs: calc(var(--spacing-unit) * 0.5);
-  --spacing-sm: calc(var(--spacing-unit) * 1);
-  --spacing-md: calc(var(--spacing-unit) * 2);
-  --spacing-lg: calc(var(--spacing-unit) * 3);
-  --spacing-xl: calc(var(--spacing-unit) * 4);
+  --spacing-sm: calc(var(--spacing-unit) * 1.5);
+  --spacing-md: calc(var(--spacing-unit) * 3);
+  --spacing-lg: calc(var(--spacing-unit) * 5);
+  --spacing-xl: calc(var(--spacing-unit) * 8);
+  --spacing-xxl: calc(var(--spacing-unit) * 12);
   
-  --border-radius: 4px;
-  --border-radius-lg: 8px;
+  /* Refined Border Radius */
+  --border-radius: 2px;
+  --border-radius-lg: 4px;
+  --border-radius-xl: 0;
   
-  --transition-base: 0.3s ease;
-  --transition-fast: 0.15s ease;
+  /* Smooth Transitions */
+  --transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  /* Subtle Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-luxury: 0 16px 48px rgba(0, 0, 0, 0.12);
   
   --page-width: 120rem;
   --page-width-margin: 2rem;
@@ -48,29 +62,56 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 1.6rem;
-  line-height: 1.6;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
   color: var(--color-text);
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1;
 }
 
-/* Typography */
+/* Premium Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-text);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
 }
 
-h1 { font-size: 4.8rem; }
-h2 { font-size: 3.6rem; }
-h3 { font-size: 2.8rem; }
-h4 { font-size: 2.4rem; }
-h5 { font-size: 2rem; }
-h6 { font-size: 1.8rem; }
+h1 { 
+  font-size: 6.4rem; 
+  font-weight: 300;
+  letter-spacing: -0.03em;
+}
+h2 { 
+  font-size: 4.8rem; 
+  font-weight: 300;
+}
+h3 { 
+  font-size: 3.6rem; 
+  font-weight: 400;
+}
+h4 { 
+  font-size: 2.8rem; 
+  font-weight: 400;
+}
+h5 { 
+  font-size: 2.2rem; 
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+h6 { 
+  font-size: 1.8rem; 
+  font-weight: 500;
+  font-family: var(--font-body);
+}
 
 p {
   margin-bottom: var(--spacing-sm);
@@ -86,41 +127,81 @@ a:hover {
   color: var(--color-primary);
 }
 
-/* Buttons */
+/* Luxury Buttons */
 .button {
-  display: inline-block;
-  padding: 1.2rem 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 3.2rem;
   font-family: var(--font-body);
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 500;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  border-radius: var(--border-radius);
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-xl);
   cursor: pointer;
   transition: all var(--transition-base);
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  transition: left var(--transition-base);
+  z-index: -1;
 }
 
 .button:hover {
-  background-color: transparent;
-  color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.button--secondary {
-  background-color: transparent;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   border-color: var(--color-primary);
 }
 
-.button--secondary:hover {
+.button:hover::before {
+  left: 0;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button--primary {
   background-color: var(--color-primary);
   color: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
+.button--primary::before {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.button--primary:hover {
+  border-color: var(--color-accent);
+}
+
+.button--accent {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.button--accent::before {
+  background: var(--color-accent);
+}
+
+.button--accent:hover {
+  color: var(--color-secondary);
+  border-color: var(--color-accent);
 }
 
 .button--sustainability {
@@ -261,28 +342,41 @@ a:hover {
 }
 
 /* Responsive */
+/* Add body padding for fixed header */
+body {
+  padding-top: 8rem;
+}
+
 @media screen and (max-width: 989px) {
   :root {
-    --page-width-margin: 1.5rem;
+    --page-width-margin: 2rem;
   }
   
-  h1 { font-size: 3.6rem; }
-  h2 { font-size: 2.8rem; }
-  h3 { font-size: 2.4rem; }
+  body {
+    padding-top: 7rem;
+  }
+  
+  h1 { font-size: 4.8rem; }
+  h2 { font-size: 3.6rem; }
+  h3 { font-size: 2.8rem; }
 }
 
 @media screen and (max-width: 749px) {
   :root {
-    --page-width-margin: 1rem;
+    --page-width-margin: 1.5rem;
   }
   
-  h1 { font-size: 2.8rem; }
-  h2 { font-size: 2.4rem; }
-  h3 { font-size: 2rem; }
+  body {
+    padding-top: 6.5rem;
+  }
+  
+  h1 { font-size: 3.6rem; }
+  h2 { font-size: 2.8rem; }
+  h3 { font-size: 2.2rem; }
   
   .button {
-    padding: 1rem 2rem;
-    font-size: 1.3rem;
+    padding: 1.4rem 2.4rem;
+    font-size: 1.2rem;
   }
 }
 

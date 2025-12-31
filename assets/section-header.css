@@ -1,12 +1,17 @@
-/* Header Styles */
+/* Luxury Header Styles */
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
+  background: rgba(250, 250, 248, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 212, 208, 0.3);
   padding: var(--spacing-md) 0;
+  transition: all var(--transition-base);
 }
 
 .header__wrapper {
@@ -34,10 +39,11 @@
 }
 
 .header__logo-text {
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 300;
   font-family: var(--font-heading);
-  color: var(--color-text);
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
 }
 
 .header__menu {
@@ -54,17 +60,35 @@
 }
 
 .header__menu-link {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   color: var(--color-text);
-  transition: color var(--transition-base);
+  transition: all var(--transition-base);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.header__menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: width var(--transition-base);
 }
 
 .header__menu-link:hover,
 .header__menu-link--active {
   color: var(--color-primary);
+}
+
+.header__menu-link:hover::after,
+.header__menu-link--active::after {
+  width: 100%;
 }
 
 .header__icons {

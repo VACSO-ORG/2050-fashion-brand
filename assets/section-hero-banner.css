@@ -1,11 +1,11 @@
-/* Hero Banner Section */
+/* Luxury Hero Banner Section */
 
 .hero-banner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60rem;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -42,52 +42,104 @@
 }
 
 .hero-banner__box {
-  max-width: 60rem;
+  max-width: 80rem;
   margin: 0 auto;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-xl);
   text-align: center;
 }
 
 .hero-banner__subheading {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: var(--font-body);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: var(--spacing-sm);
-  opacity: 0.9;
+  letter-spacing: 0.25em;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-secondary);
+  opacity: 0.85;
 }
 
 .hero-banner__heading {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   color: var(--color-secondary);
+  font-size: 8rem;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.hero-banner__heading span {
+  display: block;
+  animation: fadeInUp 1s ease-out;
 }
 
 .hero-banner__text {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.8;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
   color: var(--color-secondary);
+  opacity: 0.9;
+  font-weight: 300;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-banner__button {
-  margin-top: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.hero-banner__button::before {
+  background: var(--color-secondary);
+}
+
+.hero-banner__button:hover {
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .hero-banner {
+    min-height: 80vh;
+  }
+  
+  .hero-banner__heading {
+    font-size: 5.6rem;
+  }
 }
 
 @media screen and (max-width: 749px) {
   .hero-banner {
-    min-height: 50rem;
+    min-height: 70vh;
   }
   
   .hero-banner__box {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
   }
   
   .hero-banner__heading {
-    font-size: 3.2rem;
+    font-size: 4.2rem;
   }
   
   .hero-banner__text {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+  
+  .hero-banner__subheading {
+    font-size: 1rem;
   }
 }
 
