@@ -1,0 +1,69 @@
+{%- if product.metafields.custom.sustainability_score or product.metafields.custom.carbon_saved or product.metafields.custom.water_saved -%}
+  <div class="product-sustainability" data-product-id="{{ product.id }}">
+    <h3 class="product-sustainability__title">Sustainability Impact</h3>
+    
+    <div class="product-sustainability__metrics">
+      {%- if product.metafields.custom.sustainability_score -%}
+        <div class="product-sustainability__metric">
+          <div class="product-sustainability__metric-icon">🌱</div>
+          <div class="product-sustainability__metric-content">
+            <div class="product-sustainability__metric-value">{{ product.metafields.custom.sustainability_score }}%</div>
+            <div class="product-sustainability__metric-label">Sustainability Score</div>
+          </div>
+        </div>
+      {%- endif -%}
+      
+      {%- if product.metafields.custom.carbon_saved -%}
+        <div class="product-sustainability__metric">
+          <div class="product-sustainability__metric-icon">🌍</div>
+          <div class="product-sustainability__metric-content">
+            <div class="product-sustainability__metric-value">{{ product.metafields.custom.carbon_saved }} kg</div>
+            <div class="product-sustainability__metric-label">CO₂ Saved</div>
+          </div>
+        </div>
+      {%- endif -%}
+      
+      {%- if product.metafields.custom.water_saved -%}
+        <div class="product-sustainability__metric">
+          <div class="product-sustainability__metric-icon">💧</div>
+          <div class="product-sustainability__metric-content">
+            <div class="product-sustainability__metric-value">{{ product.metafields.custom.water_saved }} L</div>
+            <div class="product-sustainability__metric-label">Water Saved</div>
+          </div>
+        </div>
+      {%- endif -%}
+      
+      {%- if product.metafields.custom.recycled_materials -%}
+        <div class="product-sustainability__metric">
+          <div class="product-sustainability__metric-icon">♻️</div>
+          <div class="product-sustainability__metric-content">
+            <div class="product-sustainability__metric-value">{{ product.metafields.custom.recycled_materials }}%</div>
+            <div class="product-sustainability__metric-label">Recycled Materials</div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+    
+    {%- if product.metafields.custom.sustainability_badge -%}
+      <div class="product-sustainability__badge">
+        <span class="sustainability-badge sustainability-badge--large">
+          {{ product.metafields.custom.sustainability_badge }}
+        </span>
+      </div>
+    {%- endif -%}
+  </div>
+{%- else -%}
+  <div class="product-sustainability product-sustainability--default">
+    <h3 class="product-sustainability__title">Sustainability Impact</h3>
+    <p class="product-sustainability__description">
+      This product is crafted with sustainable materials and ethical practices. 
+      Every purchase contributes to our mission of creating a better future for fashion.
+    </p>
+    <div class="product-sustainability__badge">
+      <span class="sustainability-badge sustainability-badge--large">
+        🌱 Sustainable
+      </span>
+    </div>
+  </div>
+{%- endif -%}
+

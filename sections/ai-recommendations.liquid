@@ -1,0 +1,85 @@
+{{ 'section-ai-recommendations.css' | asset_url | stylesheet_tag }}
+
+<div class="ai-recommendations section-{{ section.id }}-padding" data-ai-recommendations>
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ai-recommendations__heading {{ section.settings.heading_size }}">
+        {{ section.settings.heading | escape }}
+      </h2>
+    {%- endif -%}
+
+    <div class="ai-recommendations__grid grid grid--4-col-desktop grid--2-col-tablet-down" data-recommendations-container>
+      <div class="ai-recommendations__loading" data-loading>
+        <div class="loading-spinner"></div>
+        <p>Finding perfect matches for you...</p>
+      </div>
+    </div>
+
+    {%- if section.settings.enable_ai -%}
+      <script type="application/json" data-ai-config>
+        {
+          "productsToShow": {{ section.settings.products_to_show }},
+          "userId": "{{ customer.id | default: 'guest' }}",
+          "sessionId": "{{ cart.id | default: 'new' }}"
+        }
+      </script>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AI Recommendations",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Recommended for You",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_ai",
+      "default": true,
+      "label": "Enable AI-powered recommendations"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 6,
+      "label": "Products to show"
+    }
+  ],
+  "presets": [
+    {
+      "name": "AI Recommendations"
+    }
+  ]
+}
+{% endschema %}
+

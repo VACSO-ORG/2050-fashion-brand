@@ -1,0 +1,103 @@
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
+
+<header class="header color-{{ section.settings.color_scheme }} gradient" role="banner">
+  <div class="header__wrapper page-width">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="{{ routes.root_url }}" class="header__logo-link">
+          {%- if section.settings.logo != blank -%}
+            <img
+              srcset="{%- if section.settings.logo.width >= 165 -%}{{ section.settings.logo | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if section.settings.logo.width >= 330 -%}{{ section.settings.logo | image_url: width: 330 }} 330w,{%- endif -%}
+                      {{ section.settings.logo | image_url }} {{ section.settings.logo.width }}w"
+              src="{{ section.settings.logo | image_url: width: 165 }}"
+              sizes="(min-width: 990px) 165px, (min-width: 750px) 120px, 100px"
+              alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+              loading="eager"
+              width="{{ section.settings.logo.width }}"
+              height="{{ section.settings.logo.height }}"
+            >
+          {%- else -%}
+            <span class="header__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+      </div>
+
+      <nav class="header__menu" role="navigation" aria-label="Main">
+        <ul class="header__menu-list">
+          {%- for link in linklists[section.settings.menu].links -%}
+            <li class="header__menu-item">
+              <a href="{{ link.url }}" class="header__menu-link {% if link.active %}header__menu-link--active{% endif %}">
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+
+      <div class="header__icons">
+        <a href="{{ routes.search_url }}" class="header__icon-link" aria-label="Search">
+          {% render 'icon-search' %}
+        </a>
+        <a href="{{ routes.account_url }}" class="header__icon-link" aria-label="Account">
+          {% render 'icon-account' %}
+        </a>
+        <a href="{{ routes.cart_url }}" class="header__icon-link header__cart-link" aria-label="Cart">
+          {% render 'icon-cart' %}
+          <span class="header__cart-count" data-cart-count>0</span>
+        </a>
+        <button type="button" class="header__icon-link header__menu-toggle" aria-label="Menu">
+          {% render 'icon-menu' %}
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    }
+  ]
+}
+{% endschema %}
+

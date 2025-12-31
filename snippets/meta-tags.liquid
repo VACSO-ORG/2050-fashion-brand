@@ -1,0 +1,39 @@
+{%- if request.page_type == 'index' -%}
+  <title>{{ shop.name }}</title>
+{%- else -%}
+  <title>{{ page_title }} - {{ shop.name }}</title>
+{%- endif -%}
+
+{%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+{%- endif -%}
+
+<link rel="canonical" href="{{ canonical_url }}">
+
+{%- if request.page_type == 'product' -%}
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="{{ product.title | escape }}">
+  <meta property="og:description" content="{{ product.description | strip_html | escape }}">
+  <meta property="og:image" content="{{ product.featured_image | image_url: width: 1200 }}">
+  <meta property="og:url" content="{{ shop.url }}{{ product.url }}">
+  <meta property="product:price:amount" content="{{ product.selected_or_first_available_variant.price | money_without_currency }}">
+  <meta property="product:price:currency" content="{{ cart.currency.iso_code }}">
+{%- elsif request.page_type == 'article' -%}
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ article.title | escape }}">
+  <meta property="og:description" content="{{ article.excerpt | default: article.summary | strip_html | escape }}">
+  <meta property="og:image" content="{{ article.image | default: article.image | image_url: width: 1200 }}">
+{%- else -%}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{{ page_description | default: shop.description | escape }}">
+  <meta property="og:image" content="{{ page_image | default: shop.brand.logo | image_url: width: 1200 }}">
+{%- endif -%}
+
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:site_name" content="{{ shop.name }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ page_description | default: shop.description | escape }}">
+

@@ -1,0 +1,157 @@
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer color-{{ section.settings.color_scheme }} gradient">
+  <div class="footer__content page-width">
+    <div class="footer__grid grid grid--4-col-desktop grid--2-col-tablet-down">
+      <div class="footer__block">
+        <h2 class="footer__heading">{{ section.settings.heading_1 | default: shop.name }}</h2>
+        {%- if section.settings.text_1 != blank -%}
+          <div class="footer__text rte">{{ section.settings.text_1 }}</div>
+        {%- endif -%}
+      </div>
+
+      <div class="footer__block">
+        <h2 class="footer__heading">{{ section.settings.heading_2 | default: 'Shop' }}</h2>
+        {%- if linklists[section.settings.menu_1] != blank -%}
+          <ul class="footer__list">
+            {%- for link in linklists[section.settings.menu_1].links -%}
+              <li class="footer__list-item">
+                <a href="{{ link.url }}" class="footer__link">{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+
+      <div class="footer__block">
+        <h2 class="footer__heading">{{ section.settings.heading_3 | default: 'Sustainability' }}</h2>
+        {%- if linklists[section.settings.menu_2] != blank -%}
+          <ul class="footer__list">
+            {%- for link in linklists[section.settings.menu_2].links -%}
+              <li class="footer__list-item">
+                <a href="{{ link.url }}" class="footer__link">{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+
+      <div class="footer__block">
+        <h2 class="footer__heading">{{ section.settings.heading_4 | default: 'Connect' }}</h2>
+        {%- if section.settings.show_social_icons -%}
+          <div class="footer__social">
+            {%- if settings.social_facebook_link != blank -%}
+              <a href="{{ settings.social_facebook_link }}" class="footer__social-link" aria-label="Facebook">
+                {% render 'icon-facebook' %}
+              </a>
+            {%- endif -%}
+            {%- if settings.social_instagram_link != blank -%}
+              <a href="{{ settings.social_instagram_link }}" class="footer__social-link" aria-label="Instagram">
+                {% render 'icon-instagram' %}
+              </a>
+            {%- endif -%}
+            {%- if settings.social_twitter_link != blank -%}
+              <a href="{{ settings.social_twitter_link }}" class="footer__social-link" aria-label="Twitter">
+                {% render 'icon-twitter' %}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__copyright">
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+      </div>
+      <div class="footer__sustainability">
+        <span class="sustainability-badge">🌱 Sustainable Fashion</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_1",
+      "default": "About",
+      "label": "Heading 1"
+    },
+    {
+      "type": "richtext",
+      "id": "text_1",
+      "default": "<p>2050 is a high-end sustainable fashion brand committed to creating timeless pieces for the future.</p>",
+      "label": "Text 1"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "default": "Shop",
+      "label": "Heading 2"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "default": "footer",
+      "label": "Menu 1"
+    },
+    {
+      "type": "text",
+      "id": "heading_3",
+      "default": "Sustainability",
+      "label": "Heading 3"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "default": "footer",
+      "label": "Menu 2"
+    },
+    {
+      "type": "text",
+      "id": "heading_4",
+      "default": "Connect",
+      "label": "Heading 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_icons",
+      "default": true,
+      "label": "Show social icons"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-2",
+      "label": "Color scheme"
+    }
+  ]
+}
+{% endschema %}
+

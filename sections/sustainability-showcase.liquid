@@ -1,0 +1,143 @@
+{{ 'section-sustainability-showcase.css' | asset_url | stylesheet_tag }}
+
+<div class="sustainability-showcase color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="sustainability-showcase__wrapper">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="sustainability-showcase__heading {{ section.settings.heading_size }}">
+          {{ section.settings.heading | escape }}
+        </h2>
+      {%- endif -%}
+      
+      {%- if section.settings.description != blank -%}
+        <div class="sustainability-showcase__description rte">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_metrics -%}
+        <div class="sustainability-showcase__metrics">
+          <div class="sustainability-metric">
+            <div class="sustainability-metric__icon">🌱</div>
+            <div class="sustainability-metric__value" data-metric="carbon">0</div>
+            <div class="sustainability-metric__label">kg CO₂ Saved</div>
+          </div>
+          <div class="sustainability-metric">
+            <div class="sustainability-metric__icon">💧</div>
+            <div class="sustainability-metric__value" data-metric="water">0</div>
+            <div class="sustainability-metric__label">Liters Water Saved</div>
+          </div>
+          <div class="sustainability-metric">
+            <div class="sustainability-metric__icon">♻️</div>
+            <div class="sustainability-metric__value" data-metric="recycled">0</div>
+            <div class="sustainability-metric__label">% Recycled Materials</div>
+          </div>
+          <div class="sustainability-metric">
+            <div class="sustainability-metric__icon">✨</div>
+            <div class="sustainability-metric__value" data-metric="ethical">100</div>
+            <div class="sustainability-metric__label">% Ethical Sourcing</div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="button button--sustainability">
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Sustainability Showcase",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our Commitment to Sustainability",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "<p>Every piece is crafted with the future in mind. We use sustainable materials, ethical practices, and innovative technologies to minimize our environmental impact.</p>",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_metrics",
+      "default": true,
+      "label": "Show sustainability metrics"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Learn More",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-2",
+      "label": "Color scheme"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sustainability Showcase"
+    }
+  ]
+}
+{% endschema %}
+

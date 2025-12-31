@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "text": "<p>Premium sustainable fashion crafted for the future.</p>"
+          }
+        },
+        {
+          "type": "title",
+          "settings": {}
+        },
+        {
+          "type": "price",
+          "settings": {}
+        },
+        {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        {
+          "type": "sustainability_metrics",
+          "settings": {
+            "show_metrics": true
+          }
+        },
+        {
+          "type": "ar_tryon",
+          "settings": {
+            "enable_ar": true
+          }
+        },
+        {
+          "type": "description",
+          "settings": {}
+        },
+        {
+          "type": "share",
+          "settings": {}
+        }
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "background-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "product_recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "reviews": {
+      "type": "product-reviews",
+      "settings": {
+        "heading": "Customer Reviews",
+        "show_rating": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_recommendations",
+    "reviews"
+  ]
+}
+

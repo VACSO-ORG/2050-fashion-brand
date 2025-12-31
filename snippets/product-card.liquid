@@ -1,0 +1,77 @@
+<div class="product-card" data-product-id="{{ product.id }}">
+  <div class="product-card__media">
+    <a href="{{ product.url }}" class="product-card__link">
+      {%- if product.featured_image -%}
+        <img
+          srcset="{%- if product.featured_image.width >= 165 -%}{{ product.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if product.featured_image.width >= 330 -%}{{ product.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
+                  {%- if product.featured_image.width >= 535 -%}{{ product.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
+                  {%- if product.featured_image.width >= 750 -%}{{ product.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
+                  {{ product.featured_image | image_url }} {{ product.featured_image.width }}w"
+          src="{{ product.featured_image | image_url: width: 535 }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+          alt="{{ product.featured_image.alt | escape }}"
+          loading="lazy"
+          width="{{ product.featured_image.width }}"
+          height="{{ product.featured_image.height }}"
+          class="product-card__image"
+        >
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </a>
+    
+    {%- if show_quick_add -%}
+      <div class="product-card__quick-add">
+        <button
+          type="button"
+          class="button product-card__quick-add-button"
+          data-product-id="{{ product.selected_or_first_available_variant.id }}"
+          data-product-url="{{ product.url }}"
+        >
+          Quick Add
+        </button>
+      </div>
+    {%- endif -%}
+
+    {%- if show_sustainability and product.metafields.custom.sustainability_score -%}
+      <div class="product-card__sustainability">
+        <span class="sustainability-badge">
+          {{ product.metafields.custom.sustainability_score }}% Sustainable
+        </span>
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="product-card__info">
+    <h3 class="product-card__title">
+      <a href="{{ product.url }}">{{ product.title | escape }}</a>
+    </h3>
+    
+    {%- if product.vendor != blank -%}
+      <p class="product-card__vendor">{{ product.vendor }}</p>
+    {%- endif -%}
+
+    <div class="product-card__price">
+      {%- if product.compare_at_price > product.price -%}
+        <span class="price price--on-sale">
+          <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+          {{ product.price | money }}
+        </span>
+        <span class="price price--compare">
+          <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+          {{ product.compare_at_price | money }}
+        </span>
+      {%- else -%}
+        <span class="price">
+          {{ product.price | money }}
+        </span>
+      {%- endif -%}
+    </div>
+
+    {%- if product.available == false -%}
+      <p class="product-card__availability">{{ 'products.product.sold_out' | t }}</p>
+    {%- endif -%}
+  </div>
+</div>
+

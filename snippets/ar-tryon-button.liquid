@@ -1,0 +1,25 @@
+{%- if product.metafields.custom.ar_model_url or product.metafields.custom.ar_enabled -%}
+  <button
+    type="button"
+    class="button button--ar-tryon"
+    data-ar-tryon
+    data-product-id="{{ product.id }}"
+    aria-label="Try on {{ product.title }} in AR"
+  >
+    <span class="button__icon">📱</span>
+    <span class="button__text">Try in AR</span>
+  </button>
+  
+  <div class="ar-tryon-info">
+    <p class="ar-tryon-info__text">
+      Experience this product in augmented reality. Works on compatible devices with AR support.
+    </p>
+  </div>
+{%- else -%}
+  <div class="ar-tryon-placeholder">
+    <p class="ar-tryon-placeholder__text">
+      AR try-on coming soon for this product.
+    </p>
+  </div>
+{%- endif -%}
+

@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "2050",
+        "subheading": "Sustainable Luxury Fashion",
+        "text": "Crafted for tomorrow, available today",
+        "button_label": "Explore Collection",
+        "button_link": "/collections/all",
+        "image": "",
+        "overlay_opacity": 40,
+        "text_alignment": "center"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection",
+        "collection": "",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "show_view_all": true
+      }
+    },
+    "sustainability_showcase": {
+      "type": "sustainability-showcase",
+      "settings": {
+        "heading": "Our Commitment to Sustainability",
+        "description": "Every piece is crafted with the future in mind",
+        "show_metrics": true
+      }
+    },
+    "ai_recommendations": {
+      "type": "ai-recommendations",
+      "settings": {
+        "heading": "Recommended for You",
+        "enable_ai": true,
+        "products_to_show": 6
+      }
+    },
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {
+        "heading": "The 2050 Vision",
+        "content": "We believe fashion should be timeless, sustainable, and accessible. Every piece in our collection is designed to last, crafted with eco-friendly materials, and made with ethical practices.",
+        "image": "",
+        "image_position": "right"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_collection",
+    "sustainability_showcase",
+    "ai_recommendations",
+    "brand_story"
+  ]
+}
+

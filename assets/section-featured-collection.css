@@ -1,0 +1,24 @@
+/* Featured Collection Section */
+
+.featured-collection {
+  padding: var(--spacing-xl) 0;
+}
+
+.featured-collection__title {
+  margin-bottom: var(--spacing-lg);
+}
+
+.featured-collection__grid {
+  gap: var(--spacing-md);
+}
+
+@media screen and (max-width: 749px) {
+  .featured-collection {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .featured-collection__grid {
+    gap: var(--spacing-sm);
+  }
+}
+

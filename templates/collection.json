@@ -1,0 +1,48 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "enable_sticky_filters": true,
+        "filter_type": "drawer",
+        "filters": [
+          {
+            "type": "price_range",
+            "label": "Price"
+          },
+          {
+            "type": "availability",
+            "label": "Availability"
+          },
+          {
+            "type": "sustainability",
+            "label": "Sustainability"
+          },
+          {
+            "type": "material",
+            "label": "Material"
+          },
+          {
+            "type": "color",
+            "label": "Color"
+          },
+          {
+            "type": "size",
+            "label": "Size"
+          }
+        ]
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
+
