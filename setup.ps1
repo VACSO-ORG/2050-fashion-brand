@@ -83,3 +83,4 @@ Write-Host "3. Run: npm run dev" -ForegroundColor White
 Write-Host ""
 Write-Host "For detailed setup instructions, see SETUP.md" -ForegroundColor Cyan
 
+

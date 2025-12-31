@@ -61,3 +61,4 @@ npm run mcp          # Start MCP server for AI integration
 - See `SETUP.md` for detailed setup instructions
 - See `README.md` for project overview
 
+

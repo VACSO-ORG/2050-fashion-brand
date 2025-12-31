@@ -5,11 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "npx @shopify/cli theme dev",
+    "dev:store": "npx @shopify/cli theme dev --store",
     "build": "npx @shopify/cli theme build",
     "deploy": "npx @shopify/cli theme deploy",
     "check": "npx @shopify/cli theme check",
     "mcp": "npx -y @shopify/dev-mcp@latest",
-    "setup": "npm install && npx @shopify/cli login"
+    "setup": "npm install",
+    "login": "npx @shopify/cli auth login",
+    "logout": "npx @shopify/cli auth logout",
+    "stores": "npx @shopify/cli store list"
   },
   "keywords": [
     "shopify",
@@ -27,4 +31,3 @@
     "@shopify/dev-mcp": "latest"
   }
 }
-

@@ -10,3 +10,4 @@ role = "development"
 command = "npm run build"
 watch = ["src/**/*"]
 
+

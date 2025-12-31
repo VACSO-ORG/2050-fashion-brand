@@ -84,3 +84,4 @@ echo "3. Run: npm run dev"
 echo ""
 echo "For detailed setup instructions, see SETUP.md"
 
+

@@ -188,3 +188,4 @@ npm run mcp
 - [Shopify Partners Dashboard](https://partners.shopify.com/)
 - [Shopify MCP Documentation](https://shopify.dev/docs/apps/tools/mcp)
 
+
