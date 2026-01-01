@@ -1,86 +1,17 @@
-# 2050 - High-End Sustainable Fashion Brand
+# by 2050 - High-End Sustainable Fashion Brand
 
-A premium fashion brand focused on sustainability, built on Shopify.
+A modern, luxury Shopify theme built for high-net-worth individuals aged 25-35. Features premium design, sustainability metrics, AI-powered recommendations, and AR try-on capabilities.
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
-### Prerequisites
-
-- Node.js (version 20.10 or higher)
-- npm, yarn, or pnpm package manager
-- A Shopify store (development store or partner account)
-
-### Installation
-
-1. **Install Shopify CLI globally:**
-   ```bash
-   npm install -g @shopify/cli@latest
-   ```
-
-   Or using other package managers:
-   ```bash
-   yarn global add @shopify/cli@latest
-   # or
-   pnpm add -g @shopify/cli@latest
-   ```
-
-2. **Install project dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables:**
-   ```bash
-   cp .env.example .env
-   ```
-   Then edit `.env` and add your Shopify credentials.
-
-4. **Login to Shopify:**
-   ```bash
-   shopify login
-   ```
-   Or use the setup script:
-   ```bash
-   npm run setup
-   ```
-
-### Development
-
-1. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   This will start the Shopify theme development server with hot reload.
-
-2. **Run theme checks:**
-   ```bash
-   npm run check
-   ```
-   Validates your theme code for best practices and errors.
-
-3. **Build the theme:**
-   ```bash
-   npm run build
-   ```
-   Compiles and optimizes your theme for production.
-
-### MCP Integration
-
-The Model Context Protocol (MCP) allows AI assistants to interact with your Shopify store.
-
-1. **Start the MCP server:**
-   ```bash
-   npm run mcp
-   ```
-
-2. **Configure MCP in your development environment:**
-   - Add the configuration from `mcp-config.json` to your MCP client settings
-   - Ensure your `.env` file has the required Shopify credentials
-
-### Deployment
-
-Deploy your theme to Shopify:
 ```bash
+# Install dependencies
+npm install
+
+# Start development server (localhost + Shopify preview)
+npm run dev
+
+# Deploy to Shopify
 npm run deploy
 ```
 
@@ -88,79 +19,92 @@ npm run deploy
 
 ```
 by2050/
-├── assets/          # CSS, JavaScript, and image files
-├── config/          # Theme configuration files
-├── layout/          # Theme layout templates
-├── locales/         # Translation files
-├── sections/        # Reusable theme sections
-├── snippets/        # Reusable code snippets
-├── templates/       # Page templates
-├── .shopifyignore  # Files to ignore when deploying
-├── shopify.theme.toml  # Theme configuration
-├── package.json     # Node.js dependencies
-└── README.md        # This file
+├── assets/              # CSS, JS, and static assets
+│   ├── base.css         # Core styles, fonts, colors
+│   ├── section-*.css    # Section-specific styles
+│   └── *.js             # JavaScript modules
+├── config/              # Theme configuration
+├── layout/              # Theme layouts
+├── locales/             # Translations
+├── sections/            # Customizable sections
+├── snippets/            # Reusable components
+├── templates/           # Page templates
+├── scripts/             # Setup and utility scripts
+└── docs/                # Documentation
 ```
 
-## 🛠️ Available Scripts
+## 🎨 Design System
 
-- `npm run dev` - Start development server
-- `npm run build` - Build theme for production
-- `npm run deploy` - Deploy theme to Shopify
-- `npm run check` - Run theme validation
-- `npm run mcp` - Start MCP server
-- `npm run setup` - Install dependencies and login to Shopify
+### Typography
+- **Headings**: Space Grotesk (300, 400, 500, 600, 700)
+- **Body**: DM Sans (300, 400, 500, 600, 700)
 
-## 🔗 Resources
+### Colors
+- **Primary**: `#0a0a0a` (Dark)
+- **Accent**: `#c9a961` (Gold)
+- **Background**: `#fafaf8` (Cream)
+- **Text**: `#1a1a1a` (Dark Gray)
+- **Sustainability**: `#4a7c59` (Green)
 
-- [Shopify CLI Documentation](https://shopify.dev/docs/apps/tools/cli)
-- [Shopify Theme Development](https://shopify.dev/docs/themes)
-- [Shopify MCP Documentation](https://shopify.dev/docs/apps/tools/mcp)
+All colors are defined as CSS variables in `assets/base.css`.
 
-## ✨ Modern Features (2026-Ready)
+## 🛠️ Development
 
-### AI-Powered Recommendations
-- Machine learning-based product suggestions
-- Personalized recommendations based on user behavior
-- Real-time product matching
+### Prerequisites
+- Node.js 18+
+- Shopify CLI
+- Shopify Partners account with development store
 
-### Augmented Reality (AR) Try-On
-- WebXR integration for AR product visualization
-- Camera overlay fallback for unsupported devices
-- 3D model support for immersive shopping
+### Commands
 
-### Sustainability Metrics
-- Real-time environmental impact tracking
-- Carbon footprint calculation
-- Water usage metrics
-- Recycled materials percentage
-- Ethical sourcing indicators
+```bash
+npm run dev          # Start localhost + Shopify preview
+npm run deploy       # Deploy to Shopify
+npm run check        # Run theme check
+npm run login        # Login to Shopify
+```
 
-### Advanced Collection Filtering
-- Multi-faceted filtering system
-- Price range sliders
-- Sustainability filters
-- Material and color filters
-- Real-time filter updates without page reload
+### Localhost Development
+- URL: `http://localhost:9292`
+- Hot reload enabled
+- Password: `shoptest` (automated)
 
-### High-End Design Features
-- Luxury aesthetic with clean, modern design
-- Responsive mobile-first approach
-- Smooth animations and transitions
+### Shopify Preview
+- Preview URL provided in terminal after `npm run dev`
+- Format: `https://by2050-test.myshopify.com/?preview_theme_id=...`
+
+## 📚 Documentation
+
+See `docs/` folder for detailed guides:
+- Setup instructions
+- Development workflow
+- Troubleshooting
+- Shopify configuration
+
+## 🔗 Links
+
+- **GitHub**: [VACSO-ORG/2050-fashion-brand](https://github.com/VACSO-ORG/2050-fashion-brand)
+- **Shopify Store**: by2050-test.myshopify.com
+- **Theme ID**: 150233972874
+
+## ✨ Features
+
+- Modern, luxury design aesthetic
+- Responsive mobile-first layout
+- AI-powered product recommendations
+- AR try-on integration
+- Sustainability metrics display
+- Advanced filtering and search
+- Premium typography and spacing
 - Accessibility compliant (WCAG 2.1 AA)
-- Performance optimized (Core Web Vitals)
 
-### Product Features
-- Quick add to cart
-- Variant selection with visual feedback
-- Product image galleries with zoom
-- Sustainability badges and metrics
-- Social sharing capabilities
+## 🏗️ Built With
 
-## 📝 Notes
+- Shopify Liquid
+- Modern CSS (Custom Properties, BEM)
+- Vanilla JavaScript (ES6+)
+- Shopify CLI
 
-- Make sure to keep your `.env` file secure and never commit it to version control
-- Use a development store for testing before deploying to production
-- The MCP server requires valid Shopify API credentials to function
-- AR features require WebXR-compatible devices or will fallback to camera overlay
-- AI recommendations can be integrated with Shopify's recommendation engine or custom ML services
+---
 
+**by 2050** - Timeless elegance, reimagined for the future.
