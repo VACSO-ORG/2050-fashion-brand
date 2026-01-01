@@ -4,7 +4,7 @@
   "description": "High-end sustainable fashion brand - 2050",
   "type": "module",
   "scripts": {
-    "dev": "npx @shopify/cli theme dev --store=by2050-test.myshopify.com --theme=150233972874",
+    "dev": "npx @shopify/cli theme dev --store=by2050-test.myshopify.com --theme=150233972874 --store-password=shoptest",
     "build": "npx @shopify/cli theme build",
     "deploy": "npx @shopify/cli theme push --store=by2050-test.myshopify.com --theme=150233972874",
     "check": "npx @shopify/cli theme check",
