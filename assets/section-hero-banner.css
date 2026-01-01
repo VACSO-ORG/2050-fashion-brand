@@ -7,6 +7,7 @@
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
+  background: linear-gradient(135deg, #fafaf8 0%, #f5f5f0 100%);
 }
 
 .hero-banner__media {
@@ -18,10 +19,16 @@
   z-index: 0;
 }
 
-.hero-banner__media img {
+.hero-banner__media img,
+.hero-banner__media svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero-banner__media svg {
+  background: linear-gradient(135deg, #e8e8e0 0%, #d8d8d0 100%);
+  opacity: 0.3;
 }
 
 .hero-banner__overlay {
@@ -32,6 +39,7 @@
   height: 100%;
   background: linear-gradient(180deg, rgba(10, 10, 10, 0.3) 0%, rgba(10, 10, 10, 0.5) 100%);
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-banner__content {
@@ -50,23 +58,34 @@
 
 .hero-banner__subheading {
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 300;
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.3em;
   margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.hero-banner:has(.hero-banner__media img) .hero-banner__subheading,
+.hero-banner:has(.hero-banner__overlay) .hero-banner__subheading {
   color: var(--color-secondary);
   opacity: 0.9;
-  font-weight: 300;
 }
 
 .hero-banner__heading {
   margin-bottom: var(--spacing-lg);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-size: 9.6rem;
   font-weight: 300;
   letter-spacing: -0.05em;
   line-height: 0.92;
+  text-shadow: none;
+}
+
+.hero-banner:has(.hero-banner__media img) .hero-banner__heading,
+.hero-banner:has(.hero-banner__overlay) .hero-banner__heading {
+  color: var(--color-secondary);
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -79,8 +98,8 @@
   font-size: 1.8rem;
   line-height: 1.9;
   margin-bottom: var(--spacing-xl);
-  color: var(--color-secondary);
-  opacity: 0.95;
+  color: var(--color-text);
+  opacity: 0.85;
   font-weight: 300;
   max-width: 65rem;
   margin-left: auto;
@@ -89,8 +108,21 @@
   letter-spacing: 0.01em;
 }
 
+.hero-banner:has(.hero-banner__media img) .hero-banner__text,
+.hero-banner:has(.hero-banner__overlay) .hero-banner__text {
+  color: var(--color-secondary);
+  opacity: 0.95;
+}
+
 .hero-banner__button {
   margin-top: var(--spacing-lg);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.hero-banner:has(.hero-banner__media img) .hero-banner__button,
+.hero-banner:has(.hero-banner__overlay) .hero-banner__button {
   border-color: var(--color-secondary);
   color: var(--color-secondary);
   background-color: rgba(255, 255, 255, 0.1);
@@ -98,14 +130,27 @@
 }
 
 .hero-banner__button::before {
+  background: var(--color-primary);
+}
+
+.hero-banner:has(.hero-banner__media img) .hero-banner__button::before,
+.hero-banner:has(.hero-banner__overlay) .hero-banner__button::before {
   background: var(--color-secondary);
 }
 
 .hero-banner__button:hover {
+  color: var(--color-secondary);
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-banner:has(.hero-banner__media img) .hero-banner__button:hover,
+.hero-banner:has(.hero-banner__overlay) .hero-banner__button:hover {
   color: var(--color-primary);
   border-color: var(--color-secondary);
   background-color: var(--color-secondary);
-  transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
