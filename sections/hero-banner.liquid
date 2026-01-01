@@ -31,7 +31,7 @@
         <p class="hero-banner__subheading">{{ section.settings.subheading | escape }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="hero-banner__heading h1">
+        <h2 class="hero-banner__heading h1" data-text="{{ section.settings.heading | escape }}">
           <span>{{ section.settings.heading | escape }}</span>
         </h2>
       {%- endif -%}
