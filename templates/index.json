@@ -27,7 +27,7 @@
       "type": "sustainability-showcase",
       "settings": {
         "heading": "Our Commitment to Sustainability",
-        "description": "Every piece is crafted with the future in mind",
+        "description": "<p>Every piece is crafted with the future in mind</p>",
         "show_metrics": true
       }
     },
