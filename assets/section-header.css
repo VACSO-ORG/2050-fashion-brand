@@ -40,11 +40,15 @@
 }
 
 .header__logo-text {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 300;
   font-family: var(--font-heading);
   color: var(--color-primary);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .header__menu {
@@ -71,6 +75,10 @@
   padding: 0.5rem 0;
 }
 
+.header__menu-link:hover {
+  color: var(--color-accent);
+}
+
 .header__menu-link::after {
   content: '';
   position: absolute;
@@ -82,7 +90,6 @@
   transition: width var(--transition-base);
 }
 
-.header__menu-link:hover,
 .header__menu-link--active {
   color: var(--color-primary);
 }
@@ -90,6 +97,7 @@
 .header__menu-link:hover::after,
 .header__menu-link--active::after {
   width: 100%;
+  background: var(--color-accent);
 }
 
 .header__icons {
@@ -110,7 +118,8 @@
 }
 
 .header__icon-link:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
+  transform: scale(1.1);
 }
 
 .header__icon-link svg {

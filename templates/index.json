@@ -9,7 +9,7 @@
         "button_label": "Explore Collection",
         "button_link": "/collections/all",
         "image": "",
-        "overlay_opacity": 40,
+        "overlay_opacity": 30,
         "text_alignment": "center"
       }
     },

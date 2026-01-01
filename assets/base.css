@@ -2,17 +2,27 @@
 
 :root {
   /* Luxury Color Palette - Sophisticated & Modern */
+  /* Luxury Color Palette - Rich & Vibrant */
   --color-primary: #0a0a0a;
-  --color-secondary: #f5f5f0;
+  --color-secondary: #ffffff;
   --color-background: #fafaf8;
+  --color-background-alt: #f5f5f0;
   --color-text: #1a1a1a;
   --color-text-light: #6b6b6b;
   --color-text-lighter: #9a9a9a;
-  --color-border: #d4d4d0;
+  --color-border: #e5e5e0;
   --color-accent: #c9a961; /* Refined gold accent */
+  --color-accent-light: #d4b876;
   --color-accent-dark: #a68a4f;
   --color-success: #2d5016;
   --color-sustainability: #4a7c59;
+  
+  /* Color Scheme Definitions */
+  --color-accent-1: var(--color-accent);
+  --color-accent-2: var(--color-sustainability);
+  --color-background-1: var(--color-background);
+  --color-background-2: var(--color-background-alt);
+  --color-inverse: var(--color-primary);
   
   /* Premium Typography */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
@@ -145,7 +155,7 @@ a:hover {
   letter-spacing: 0.15em;
   color: var(--color-primary);
   background-color: transparent;
-  border: 1px solid var(--color-primary);
+  border: 1.5px solid var(--color-primary);
   border-radius: var(--border-radius-xl);
   cursor: pointer;
   transition: all var(--transition-base);
@@ -192,6 +202,8 @@ a:hover {
 
 .button--primary:hover {
   border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
 }
 
 .button--accent {

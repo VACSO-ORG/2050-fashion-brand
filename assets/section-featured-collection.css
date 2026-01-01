@@ -3,6 +3,17 @@
 .featured-collection {
   padding: var(--spacing-xxl) 0;
   background-color: var(--color-background);
+  position: relative;
+}
+
+.featured-collection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
 }
 
 .featured-collection__title {
