@@ -1,58 +1,77 @@
-/* Brand Story Section */
+/* Brand Story Section - Luxury Design */
 
 .brand-story {
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-background);
 }
 
-.brand-story__wrapper {
+.brand-story__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-xl);
+  gap: var(--spacing-xxl);
   align-items: center;
 }
 
-.brand-story__media {
-  order: 1;
+.brand-story__grid.grid--reverse {
+  direction: rtl;
 }
 
-.brand-story__media--right {
-  order: 2;
+.brand-story__grid.grid--reverse > * {
+  direction: ltr;
+}
+
+.brand-story__media {
+  position: relative;
+  overflow: hidden;
 }
 
 .brand-story__media img {
   width: 100%;
   height: auto;
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius);
   object-fit: cover;
+  transition: transform var(--transition-slow);
+  box-shadow: var(--shadow-md);
+}
+
+.brand-story__media:hover img {
+  transform: scale(1.02);
 }
 
 .brand-story__content {
-  order: 2;
-}
-
-.brand-story__media--right ~ .brand-story__content {
-  order: 1;
+  padding: var(--spacing-xl);
 }
 
 .brand-story__heading {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 
 .brand-story__text {
-  font-size: 1.8rem;
-  line-height: 1.8;
+  font-size: 1.9rem;
+  line-height: 1.85;
   color: var(--color-text);
+  font-weight: 300;
+  opacity: 0.9;
 }
 
 @media screen and (max-width: 989px) {
-  .brand-story__wrapper {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+  .brand-story {
+    padding: var(--spacing-xl) 0;
   }
   
-  .brand-story__media,
+  .brand-story__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
   .brand-story__content {
-    order: initial;
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .brand-story__text {
+    font-size: 1.7rem;
   }
 }
 

@@ -3,9 +3,9 @@
     "hero": {
       "type": "hero-banner",
       "settings": {
-        "heading": "2050",
+        "heading": "by 2050",
         "subheading": "Sustainable Luxury Fashion",
-        "text": "<p>Crafted for tomorrow, available today</p>",
+        "text": "<p>Timeless elegance, reimagined for the future</p>",
         "button_label": "Explore Collection",
         "button_link": "/collections/all",
         "image": "",

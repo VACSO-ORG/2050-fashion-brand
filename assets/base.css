@@ -7,6 +7,7 @@
   --color-background: #fafaf8;
   --color-text: #1a1a1a;
   --color-text-light: #6b6b6b;
+  --color-text-lighter: #9a9a9a;
   --color-border: #d4d4d0;
   --color-accent: #c9a961; /* Refined gold accent */
   --color-accent-dark: #a68a4f;
@@ -26,6 +27,7 @@
   --spacing-lg: calc(var(--spacing-unit) * 5);
   --spacing-xl: calc(var(--spacing-unit) * 8);
   --spacing-xxl: calc(var(--spacing-unit) * 12);
+  --spacing-xxxl: calc(var(--spacing-unit) * 16);
   
   /* Refined Border Radius */
   --border-radius: 2px;
@@ -43,8 +45,8 @@
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
   --shadow-luxury: 0 16px 48px rgba(0, 0, 0, 0.12);
   
-  --page-width: 120rem;
-  --page-width-margin: 2rem;
+  --page-width: 140rem;
+  --page-width-margin: 3rem;
 }
 
 *,
@@ -58,6 +60,8 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -222,7 +226,7 @@ a:hover {
 }
 
 .section {
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-xxl) 0;
 }
 
 .section--full-width {
@@ -288,7 +292,12 @@ a:hover {
 }
 
 .gradient {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(250, 250, 248, 0) 0%, rgba(250, 250, 248, 0.95) 100%);
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-padding-top: 9rem;
 }
 
 /* Loading States */
@@ -297,7 +306,7 @@ a:hover {
   pointer-events: none;
 }
 
-/* Animations */
+/* Premium Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -309,8 +318,53 @@ a:hover {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .fade-in {
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes slideIn {
@@ -344,7 +398,7 @@ a:hover {
 /* Responsive */
 /* Add body padding for fixed header */
 body {
-  padding-top: 8rem;
+  padding-top: 9rem;
 }
 
 @media screen and (max-width: 989px) {
@@ -353,12 +407,16 @@ body {
   }
   
   body {
-    padding-top: 7rem;
+    padding-top: 8rem;
   }
   
   h1 { font-size: 4.8rem; }
   h2 { font-size: 3.6rem; }
   h3 { font-size: 2.8rem; }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
 }
 
 @media screen and (max-width: 749px) {
@@ -367,7 +425,7 @@ body {
   }
   
   body {
-    padding-top: 6.5rem;
+    padding-top: 7.5rem;
   }
   
   h1 { font-size: 3.6rem; }
@@ -377,6 +435,10 @@ body {
   .button {
     padding: 1.4rem 2.4rem;
     font-size: 1.2rem;
+  }
+  
+  .section {
+    padding: var(--spacing-lg) 0;
   }
 }
 

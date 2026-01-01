@@ -2,9 +2,9 @@
 
 <div class="brand-story section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width">
-    <div class="brand-story__wrapper">
+    <div class="brand-story__grid grid grid--2-col {% if section.settings.image_position == 'left' %}grid--reverse{% endif %}">
       {%- if section.settings.image != blank -%}
-        <div class="brand-story__media {% if section.settings.image_position == 'right' %}brand-story__media--right{% endif %}">
+        <div class="brand-story__media">
           <img
             srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
                     {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}

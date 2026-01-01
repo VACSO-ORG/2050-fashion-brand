@@ -1,15 +1,29 @@
-/* Featured Collection Section */
+/* Featured Collection Section - Luxury Design */
 
 .featured-collection {
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-background);
 }
 
 .featured-collection__title {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.title-wrapper-with-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
 }
 
 .featured-collection__grid {
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
 }
 
 @media screen and (max-width: 749px) {

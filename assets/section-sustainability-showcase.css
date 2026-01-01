@@ -1,8 +1,8 @@
 /* Sustainability Showcase Section */
 
 .sustainability-showcase {
-  padding: var(--spacing-xl) 0;
-  background: linear-gradient(135deg, rgba(74, 124, 89, 0.05) 0%, rgba(74, 124, 89, 0.1) 100%);
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(135deg, rgba(74, 124, 89, 0.03) 0%, rgba(74, 124, 89, 0.08) 100%);
 }
 
 .sustainability-showcase__wrapper {
@@ -12,16 +12,21 @@
 }
 
 .sustainability-showcase__heading {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 
 .sustainability-showcase__description {
-  font-size: 1.8rem;
-  line-height: 1.8;
-  margin-bottom: var(--spacing-xl);
-  max-width: 60rem;
+  font-size: 1.9rem;
+  line-height: 1.85;
+  margin-bottom: var(--spacing-xxl);
+  max-width: 70rem;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 300;
+  color: var(--color-text);
+  opacity: 0.9;
 }
 
 .sustainability-showcase__metrics {
