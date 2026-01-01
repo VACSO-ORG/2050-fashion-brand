@@ -51,14 +51,16 @@
 .sustainability-metric {
   padding: var(--spacing-lg);
   background: var(--color-background);
+  border: 1px solid rgba(74, 124, 89, 0.2);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
 .sustainability-metric:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+  border-color: var(--color-sustainability);
 }
 
 .sustainability-metric__icon {
@@ -68,10 +70,14 @@
 
 .sustainability-metric__value {
   font-size: 3.6rem;
-  font-weight: 700;
+  font-weight: 300;
   color: var(--color-sustainability);
   margin-bottom: var(--spacing-xs);
   font-family: var(--font-heading);
+  background: linear-gradient(135deg, var(--color-sustainability) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .sustainability-metric__label {

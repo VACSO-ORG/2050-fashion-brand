@@ -117,7 +117,8 @@
 }
 
 .price--on-sale {
-  color: var(--color-primary);
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 .price--compare {
