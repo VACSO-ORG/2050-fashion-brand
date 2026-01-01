@@ -2,58 +2,58 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "blocks": [
-        {
+      "blocks": {
+        "text_block": {
           "type": "text",
           "settings": {
             "text": "Premium sustainable fashion crafted for the future."
           }
         },
-        {
+        "title_block": {
           "type": "title",
           "settings": {}
         },
-        {
+        "price_block": {
           "type": "price",
           "settings": {}
         },
-        {
+        "variant_picker_block": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button"
           }
         },
-        {
+        "quantity_selector_block": {
           "type": "quantity_selector",
           "settings": {}
         },
-        {
+        "buy_buttons_block": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true
           }
         },
-        {
+        "sustainability_metrics_block": {
           "type": "sustainability_metrics",
           "settings": {
             "show_metrics": true
           }
         },
-        {
+        "ar_tryon_block": {
           "type": "ar_tryon",
           "settings": {
             "enable_ar": true
           }
         },
-        {
+        "description_block": {
           "type": "description",
           "settings": {}
         },
-        {
+        "share_block": {
           "type": "share",
           "settings": {}
         }
-      ],
+      },
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "background-1",
