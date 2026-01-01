@@ -4,16 +4,17 @@
   "description": "High-end sustainable fashion brand - 2050",
   "type": "module",
   "scripts": {
-    "dev": "npx @shopify/cli theme dev",
-    "dev:store": "npx @shopify/cli theme dev --store",
+    "dev": "npx @shopify/cli theme dev --store=by2050-test.myshopify.com --theme=150233972874",
     "build": "npx @shopify/cli theme build",
-    "deploy": "npx @shopify/cli theme deploy",
+    "deploy": "npx @shopify/cli theme push --store=by2050-test.myshopify.com --theme=150233972874",
     "check": "npx @shopify/cli theme check",
     "mcp": "npx -y @shopify/dev-mcp@latest",
     "setup": "npm install",
     "login": "npx @shopify/cli auth login",
     "logout": "npx @shopify/cli auth logout",
-    "stores": "npx @shopify/cli store list"
+    "stores": "npx @shopify/cli store list",
+    "push": "npx @shopify/cli theme push --store=by2050-test.myshopify.com --theme=150233972874",
+    "list": "npx @shopify/cli theme list --store=by2050-test.myshopify.com"
   },
   "keywords": [
     "shopify",
