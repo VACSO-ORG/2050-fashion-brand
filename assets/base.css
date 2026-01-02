@@ -85,6 +85,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "kern" 1, "liga" 1;
+  margin: 0;
+  padding: 0;
+}
+
+/* Homepage - dark background to match hero */
+body:has(.hero-banner) {
+  background-color: #1a1a1a;
 }
 
 /* Modern Typography */

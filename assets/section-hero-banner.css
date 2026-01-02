@@ -10,6 +10,9 @@
   background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
   background-size: 200% 200%;
   animation: subtleGradient 20s ease infinite;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  top: 0;
 }
 
 @keyframes subtleGradient {
