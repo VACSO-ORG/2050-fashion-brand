@@ -5,14 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   min-height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
   background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
   background-size: 200% 200%;
   animation: subtleGradient 20s ease infinite;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  top: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @keyframes subtleGradient {
@@ -61,26 +62,35 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: var(--spacing-xl) var(--page-width-margin);
+  padding: 2rem var(--page-width-margin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .hero-banner__box {
-  max-width: 95rem;
+  max-width: 90rem;
   margin: 0 auto;
-  padding: var(--spacing-xxl) var(--spacing-xl);
+  padding: 0;
   text-align: center;
   position: relative;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 
 .hero-banner__subheading {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 500;
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  margin-bottom: var(--spacing-md);
+  margin: 0;
   color: var(--color-sustainability); /* Green for sustainability */
   opacity: 1;
   text-shadow: none;
@@ -100,29 +110,26 @@
 }
 
 .hero-banner__heading {
-  margin-bottom: var(--spacing-lg);
+  margin: 0;
   color: var(--color-secondary); /* White text on dark background */
-  font-size: 11.2rem;
+  font-size: clamp(4rem, 8vw, 9.6rem);
   font-weight: 700;
   letter-spacing: -0.05em;
-  line-height: 0.95;
+  line-height: 1;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   font-family: var(--font-heading);
 }
 
-.hero-banner__heading span {
-  display: block;
-  animation: fadeInUp 1s ease-out;
-}
+/* Removed span wrapper - direct heading styling */
 
 .hero-banner__text {
-  font-size: 1.8rem;
-  line-height: 1.8;
-  margin-bottom: var(--spacing-xl);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  line-height: 1.6;
+  margin: 0;
   color: rgba(255, 255, 255, 0.9); /* White text on dark background */
   opacity: 0.95;
   font-weight: 300;
-  max-width: 70rem;
+  max-width: 65rem;
   margin-left: auto;
   margin-right: auto;
   font-family: var(--font-body);
@@ -131,18 +138,18 @@
 }
 
 .hero-banner__button {
-  margin-top: var(--spacing-lg);
+  margin: 0;
   border-color: var(--color-sustainability);
   color: var(--color-secondary);
   background-color: var(--color-sustainability);
   border-width: 2px;
   font-weight: 600;
-  padding: 1.6rem 3.6rem;
+  padding: 1.4rem 3.2rem;
   box-shadow: 0 4px 16px rgba(74, 124, 89, 0.3);
   transition: all var(--transition-base);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .hero-banner__button::before {
@@ -170,49 +177,51 @@
 
 @media screen and (max-width: 989px) {
   .hero-banner {
-    min-height: 85vh;
+    height: 100vh;
+    min-height: 100vh;
   }
   
-  .hero-banner__heading {
-    font-size: 7.2rem;
-  }
-  
-  .hero-banner__text {
-    font-size: 1.7rem;
+  .hero-banner__box {
+    gap: 1.5rem;
   }
   
   .hero-banner__subheading {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+  
+  .hero-banner__button {
+    padding: 1.2rem 2.8rem;
+    font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 749px) {
   .hero-banner {
-    min-height: 80vh;
+    height: 100vh;
+    min-height: 100vh;
+  }
+  
+  .hero-banner__content {
+    padding: 2rem 1.5rem;
   }
   
   .hero-banner__box {
-    padding: var(--spacing-xl) var(--spacing-md);
-  }
-  
-  .hero-banner__heading {
-    font-size: 5.6rem;
-    line-height: 1.1;
-  }
-  
-  .hero-banner__text {
-    font-size: 1.6rem;
-    line-height: 1.7;
+    gap: 1.2rem;
+    max-width: 100%;
   }
   
   .hero-banner__subheading {
-    font-size: 1.1rem;
-    letter-spacing: 0.12em;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+  
+  .hero-banner__text {
+    max-width: 100%;
   }
   
   .hero-banner__button {
-    padding: 1.4rem 3rem;
-    font-size: 1.2rem;
+    padding: 1.2rem 2.4rem;
+    font-size: 1rem;
   }
 }
 
