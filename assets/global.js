@@ -36,14 +36,15 @@ const Utils = {
   }
 };
 
-// Header scroll behavior
+// Header scroll behavior - hidden on hero, visible when scrolling
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.header');
   if (header) {
     let lastScroll = 0;
     const handleScroll = () => {
       const currentScroll = window.pageYOffset;
-      if (currentScroll > 100) {
+      // Only show header when scrolled past hero section (500px)
+      if (currentScroll > 500) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
