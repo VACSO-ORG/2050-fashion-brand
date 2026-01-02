@@ -1,5 +1,6 @@
 {{ 'section-sustainability-showcase.css' | asset_url | stylesheet_tag }}
 
+{%- if section.settings.heading != blank or section.settings.description != blank or section.settings.show_metrics -%}
 <div class="sustainability-showcase color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width">
     <div class="sustainability-showcase__wrapper">
@@ -48,6 +49,7 @@
     </div>
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {

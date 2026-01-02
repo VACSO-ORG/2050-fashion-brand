@@ -1,5 +1,6 @@
 {{ 'section-ai-recommendations.css' | asset_url | stylesheet_tag }}
 
+{%- if section.settings.heading != blank or section.settings.enable_ai -%}
 <div class="ai-recommendations section-{{ section.id }}-padding" data-ai-recommendations>
   <div class="page-width">
     {%- if section.settings.heading != blank -%}
@@ -26,6 +27,7 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {

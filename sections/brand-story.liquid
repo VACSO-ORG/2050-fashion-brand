@@ -1,5 +1,6 @@
 {{ 'section-brand-story.css' | asset_url | stylesheet_tag }}
 
+{%- if section.settings.heading != blank or section.settings.content != blank or section.settings.image != blank -%}
 <div class="brand-story section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width">
     <div class="brand-story__grid grid grid--2-col {% if section.settings.image_position == 'left' %}grid--reverse{% endif %}">
@@ -36,6 +37,7 @@
     </div>
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {

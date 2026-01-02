@@ -20,6 +20,7 @@
   aspect-ratio: 1;
   box-shadow: var(--shadow-sm);
   transition: box-shadow var(--transition-base);
+  margin-bottom: var(--spacing-sm);
 }
 
 .product-card:hover .product-card__media {
@@ -78,15 +79,16 @@
 }
 
 .product-card__info {
-  padding: var(--spacing-md) 0 var(--spacing-sm);
+  padding: var(--spacing-sm) 0 0;
 }
 
 .product-card__title {
-  font-size: 1.7rem;
-  font-weight: 400;
+  font-size: 1.4rem;
+  font-weight: 500;
   margin-bottom: var(--spacing-xs);
   font-family: var(--font-heading);
   letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
 .product-card__title a {
@@ -99,9 +101,9 @@
 }
 
 .product-card__vendor {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-text-light);
-  opacity: 0.8;
+  opacity: 0.7;
   margin-bottom: var(--spacing-xs);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -109,11 +111,11 @@
 }
 
 .product-card__price {
-  font-size: 1.7rem;
-  font-weight: 500;
-  margin-top: var(--spacing-sm);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: var(--spacing-xs);
   font-family: var(--font-body);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .price--on-sale {
@@ -128,9 +130,9 @@
 }
 
 .product-card__availability {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--color-text-light);
-  opacity: 0.8;
+  opacity: 0.7;
   margin-top: var(--spacing-xs);
   text-transform: uppercase;
   letter-spacing: 0.08em;
