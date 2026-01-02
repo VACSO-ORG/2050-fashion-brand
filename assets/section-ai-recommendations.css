@@ -1,4 +1,8 @@
-/* AI Recommendations Section */
+/* AI Recommendations Section - Modern Design */
+
+.ai-recommendations {
+  padding: var(--spacing-xxxl) 0;
+}
 
 .ai-recommendations {
   padding: var(--spacing-xl) 0;

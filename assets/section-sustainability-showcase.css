@@ -1,4 +1,8 @@
-/* Sustainability Showcase Section */
+/* Sustainability Showcase Section - Modern Design */
+
+.sustainability-showcase {
+  padding: var(--spacing-xxxl) 0;
+}
 
 .sustainability-showcase {
   padding: var(--spacing-xxl) 0;
