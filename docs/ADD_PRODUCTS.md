@@ -106,3 +106,4 @@ Your theme supports:
 - Product Import Guide: https://help.shopify.com/en/manual/products/import-export
 - Drop Shipping Guide: https://help.shopify.com/en/manual/dropshipping
 
+

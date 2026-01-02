@@ -1,0 +1,31 @@
+# Core Agent Rules - by 2050
+
+## Always Apply
+
+### Planning & Implementation
+- Plan first, then implement
+- Small diffs, minimal reformatting
+- Run tests or typecheck after changes when available
+- Ask before adding dependencies or changing configs
+- Prefer existing patterns in this codebase
+- Show commands to run, do not invent results
+
+### Code Quality
+- Follow Shopify Liquid best practices
+- Use BEM naming for CSS classes
+- Maintain semantic HTML5 structure
+- Keep JavaScript ES6+ (classes, async/await)
+- Use CSS variables for all colors
+
+### Design Rules (Critical)
+- Hero section: 100vh, all text visible on load, perfectly centered
+- NO blue colors - only greens (#2d5016, #4a7c59), greys (#1a1a1a, #2c2c2c), earth tones (#8b6f47)
+- Header hidden on hero, appears after 500px scroll
+- Logical spacing using flexbox gap, not excessive padding
+- Hide empty sections
+
+### Safety
+- Never overwrite existing files without checking
+- Keep diffs minimal
+- Test changes in localhost before deploying
+- Verify Shopify theme check passes

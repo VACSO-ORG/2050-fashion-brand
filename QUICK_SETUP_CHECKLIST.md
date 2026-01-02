@@ -39,3 +39,4 @@ Press `Ctrl+,` → Search "MCP" → Add custom MCP server
 
 **That's it!** Everything else is automated. 🚀
 
+

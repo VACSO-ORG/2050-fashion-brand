@@ -1,7 +1,14 @@
 # by 2050 - Project Context & Architecture
 
-## Project Overview
+## What This Repo Is
 **by 2050** is a high-end sustainable men's fashion brand built on Shopify. The brand targets high-net-worth individuals aged 25-35 who value quality, sustainability, and modern design.
+
+**Tech Stack:**
+- **Templating**: Shopify Liquid (`.liquid` files)
+- **Styling**: Modern CSS with Custom Properties, BEM naming
+- **Scripting**: Vanilla JavaScript (ES6+ classes, async/await)
+- **Package Manager**: npm (Node.js v20.15.0)
+- **Framework**: Shopify Theme (no React/Vue - pure Shopify)
 
 ## Core Principles
 
@@ -72,6 +79,51 @@ by2050/
 └── docs/            # Documentation
 ```
 
+## How to Run It
+
+### Development Server
+```bash
+npm run dev
+```
+- Starts on `http://localhost:9292`
+- Hot reload enabled
+- Provides Shopify preview URL
+- Password automated: `shoptest`
+
+### Theme Validation
+```bash
+npm run check
+```
+- Validates Liquid syntax
+- Checks JSON schemas
+- Verifies assets and translations
+
+### Deploy to Shopify
+```bash
+npm run deploy
+```
+- Pushes theme to `by2050-test.myshopify.com`
+- Theme ID: `150233972874`
+
+## How to Test It
+
+### Manual Testing
+1. Start dev server: `npm run dev`
+2. Open `http://localhost:9292`
+3. Check:
+   - Hero section loads with all text visible
+   - No white space above hero
+   - Header hidden on hero, appears on scroll
+   - Colors consistent (no blue)
+   - Responsive on mobile/tablet/desktop
+
+### Theme Check
+```bash
+npm run check
+```
+- Should pass with no errors
+- Fix any reported issues before deploying
+
 ## Development Workflow
 1. **Local Development**: `npm run dev` (localhost:9292 + Shopify preview)
 2. **Theme Check**: `npm run check` (validate code)
@@ -103,4 +155,5 @@ by2050/
 - Lazy load non-critical assets
 - Semantic HTML5
 - Proper heading hierarchy (h1 for hero)
+
 
