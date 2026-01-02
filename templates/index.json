@@ -4,31 +4,36 @@
       "type": "hero-banner",
       "settings": {
         "heading": "by 2050",
-        "subheading": "Sustainable Luxury Fashion",
-        "text": "<p>Timeless elegance, reimagined for the future</p>",
-        "button_label": "Explore Collection",
+        "subheading": "Sustainable Men's Fashion",
+        "text": "<p>Timeless style, crafted for the conscious man. Premium sustainable fashion that doesn't compromise on quality or design.</p>",
+        "button_label": "Shop Collection",
         "button_link": "/collections/all",
         "image": "",
-        "overlay_opacity": 30,
-        "text_alignment": "center"
+        "overlay_opacity": 0,
+        "text_alignment": "center",
+        "color_scheme": "inverse"
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured Collection",
+        "title": "New Arrivals",
         "collection": "",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "show_view_all": true
+        "show_view_all": true,
+        "heading_size": "h1"
       }
     },
     "sustainability_showcase": {
       "type": "sustainability-showcase",
       "settings": {
         "heading": "Our Commitment to Sustainability",
-        "description": "<p>Every piece is crafted with the future in mind</p>",
-        "show_metrics": true
+        "description": "<p>Every piece is crafted with the future in mind. We use sustainable materials, ethical practices, and innovative technologies to minimize our environmental impact while delivering premium quality men's fashion.</p>",
+        "show_metrics": true,
+        "button_label": "Learn More",
+        "button_link": "/pages/sustainability",
+        "color_scheme": "background-2"
       }
     },
     "ai_recommendations": {
@@ -43,7 +48,7 @@
       "type": "brand-story",
       "settings": {
         "heading": "The 2050 Vision",
-        "content": "<p>We believe fashion should be timeless, sustainable, and accessible. Every piece in our collection is designed to last, crafted with eco-friendly materials, and made with ethical practices.</p>",
+        "content": "<p>We believe men's fashion should be timeless, sustainable, and built to last. Every piece in our collection is designed for the modern man who values quality, style, and environmental responsibility. Crafted with eco-friendly materials and ethical practices, our garments are made to stand the test of time.</p>",
         "image": "",
         "image_position": "right"
       }

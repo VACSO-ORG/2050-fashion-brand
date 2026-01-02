@@ -53,6 +53,10 @@
   justify-content: center;
 }
 
+.header__menu-list:empty {
+  display: none;
+}
+
 .header__menu-list {
   display: flex;
   align-items: center;
