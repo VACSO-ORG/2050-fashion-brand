@@ -468,9 +468,14 @@ html {
 }
 
 /* Responsive */
-/* Add body padding for fixed header */
+/* No body padding - hero section starts at top */
 body {
-  padding-top: 9rem;
+  padding-top: 0;
+}
+
+/* Only add padding if header is visible (scrolled) */
+body:has(.header.scrolled) {
+  padding-top: 0; /* Header is fixed, doesn't need body padding */
 }
 
 @media screen and (max-width: 989px) {
