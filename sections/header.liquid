@@ -23,6 +23,7 @@
         </a>
       </div>
 
+      {%- if linklists[section.settings.menu].links.size > 0 -%}
       <nav class="header__menu" role="navigation" aria-label="Main">
         <ul class="header__menu-list">
           {%- for link in linklists[section.settings.menu].links -%}
@@ -34,6 +35,7 @@
           {%- endfor -%}
         </ul>
       </nav>
+      {%- endif -%}
 
       <div class="header__icons">
         <a href="{{ routes.search_url }}" class="header__icon-link" aria-label="Search">

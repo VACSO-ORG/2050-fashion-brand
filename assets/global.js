@@ -36,6 +36,25 @@ const Utils = {
   }
 };
 
+// Header scroll behavior
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
+  if (header) {
+    let lastScroll = 0;
+    const handleScroll = () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+  }
+});
+
 // Cart functionality
 class CartManager {
   constructor() {
