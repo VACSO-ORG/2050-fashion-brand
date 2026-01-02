@@ -29,3 +29,4 @@ if ($LASTEXITCODE -ne 0) {
     npx @shopify/cli theme dev --store=$store
 }
 
+

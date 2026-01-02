@@ -24,3 +24,4 @@ npx @shopify/cli theme dev --store=$store --theme=$theme
 Write-Host ""
 Write-Host "Development server stopped." -ForegroundColor Yellow
 
+
