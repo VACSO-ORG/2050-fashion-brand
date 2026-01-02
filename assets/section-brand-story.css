@@ -1,7 +1,7 @@
-/* Brand Story Section - Luxury Design */
+/* Brand Story Section - Modern Design */
 
 .brand-story {
-  padding: var(--spacing-xxl) 0;
+  padding: var(--spacing-xxxl) 0;
   background-color: var(--color-background-alt);
   position: relative;
 }
