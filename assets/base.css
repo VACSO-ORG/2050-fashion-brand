@@ -366,9 +366,9 @@ a:hover {
   color: var(--color-secondary);
 }
 
-/* Smooth scroll for anchor links */
+/* Smooth scroll for anchor links - no padding needed since header is hidden */
 html {
-  scroll-padding-top: 9rem;
+  scroll-padding-top: 0;
 }
 
 /* Loading States */
