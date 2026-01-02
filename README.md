@@ -80,6 +80,12 @@ See `docs/` folder for detailed guides:
 - Development workflow
 - Troubleshooting
 - Shopify configuration
+- **Cursor Setup** (`docs/CURSOR_SETUP.md`) - IDE configuration
+- **Adding Products** (`docs/ADD_PRODUCTS.md`) - Drop shipping guide
+
+**Project Context:**
+- `CLAUDE.md` - High-level project context for AI
+- `.cursorrules` - Project-specific AI rules and design standards
 
 ## 🔗 Links
 
