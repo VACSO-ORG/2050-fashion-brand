@@ -1,7 +1,7 @@
 /* Featured Collection Section - Luxury Design */
 
 .featured-collection {
-  padding: var(--spacing-xxl) 0;
+  padding: var(--spacing-xxxl) 0;
   background-color: var(--color-background);
   position: relative;
 }
@@ -48,8 +48,8 @@
 
 .featured-collection__grid {
   display: grid;
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-xl);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xxl);
 }
 
 .featured-collection__grid.grid--4-col-desktop {
