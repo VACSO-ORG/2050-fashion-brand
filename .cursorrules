@@ -1,31 +1,58 @@
-# 2050 Fashion Brand - Cursor Rules
+# by 2050 - Cursor AI Rules
 
 ## Project Context
-This is a high-end sustainable fashion brand called "2050" built on Shopify.
+High-end sustainable men's fashion brand built on Shopify. Target audience: high-net-worth individuals aged 25-35.
 
-## Shopify Development Guidelines
-- Use Shopify Liquid templating language for theme development
-- Follow Shopify theme best practices and conventions
-- Maintain accessibility standards (WCAG 2.1 AA)
-- Optimize for performance (Core Web Vitals)
-- Ensure mobile-first responsive design
+## Critical Design Rules
 
-## Code Style
-- Use semantic HTML5
-- Follow BEM naming convention for CSS classes
-- Use modern JavaScript (ES6+)
-- Maintain consistent indentation (2 spaces)
+### Hero Section
+- MUST start at absolute top (no white space above)
+- MUST be exactly 100vh height (height: 100vh, min-height: 100vh, max-height: 100vh)
+- ALL text MUST be visible and centered on page load
+- Use flexbox for perfect vertical/horizontal centering
+- Use logical spacing (gap, not excessive padding)
+- Use clamp() for responsive typography
 
-## Sustainability Focus
-- Optimize images and assets for performance
-- Minimize JavaScript bundle size
-- Use efficient CSS (avoid unnecessary animations)
-- Consider carbon footprint in design decisions
+### Colors
+- NO blue colors anywhere
+- Use greens (#2d5016, #4a7c59) for sustainability
+- Use greys (#1a1a1a, #2c2c2c) for text/backgrounds
+- Use earth tones (#8b6f47) for accents
+- Force color consistency with !important if needed
+
+### Header
+- Hidden on hero section (opacity: 0, visibility: hidden, transform: translateY(-100%))
+- Only appears after scrolling 500px past hero
+- No white banner visible on homepage
+
+### Sections
+- Hide empty sections (check for content before rendering)
+- Product tiles: reasonable size (1.4rem title, 1.5rem price)
+- Use consistent spacing scale (CSS variables)
+
+## Code Standards
+- Shopify Liquid: Use {% render %} for snippets, {% schema %} for settings
+- CSS: BEM naming, CSS variables, mobile-first
+- JavaScript: ES6+ (classes, async/await)
+- HTML: Semantic HTML5, proper heading hierarchy (h1 for hero)
+
+## Spacing Logic
+- Hero: Use flexbox gap (2rem), NOT excessive padding
+- Sections: Use CSS variable spacing scale
+- Products: Compact, readable sizes
+- Viewport-based: Use vh/vw/clamp() for responsive sizing
 
 ## File Organization
-- Keep theme files organized in standard Shopify structure
-- Use snippets for reusable components
-- Use sections for customizable page elements
-- Maintain clean separation of concerns
+- Standard Shopify structure (assets/, sections/, snippets/, templates/)
+- Keep docs/ and scripts/ organized
+- Use .cursorignore for performance
+
+## Always Check
+- ✅ All text visible on page load?
+- ✅ Hero starts at top with no white space?
+- ✅ Colors consistent (no blue)?
+- ✅ Header hidden on hero?
+- ✅ Proper spacing and centering?
+- ✅ Responsive on all screen sizes?
 
 
