@@ -313,31 +313,39 @@ a:hover {
 
 /* Removed gradient class - using solid colors for consistency */
 
-/* Color Scheme Classes - Consistent with men's sustainable fashion palette */
+/* Color Scheme Classes - Consistent with men's sustainable fashion palette (NO BLUE) */
 .color-accent-1 {
-  background-color: rgba(74, 124, 89, 0.08); /* Subtle green tint */
-  color: var(--color-text);
+  background-color: rgba(74, 124, 89, 0.08) !important; /* Subtle green tint - NO BLUE */
+  color: var(--color-text) !important;
   border-top: 1px solid rgba(74, 124, 89, 0.15);
 }
 
+.color-accent-1 * {
+  color: var(--color-text) !important;
+}
+
 .color-accent-2 {
-  background-color: var(--color-background-alt); /* Warm off-white */
-  color: var(--color-text);
+  background-color: var(--color-background-alt) !important; /* Warm off-white - NO BLUE */
+  color: var(--color-text) !important;
+}
+
+.color-accent-2 * {
+  color: var(--color-text) !important;
 }
 
 .color-background-1 {
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background-color: var(--color-background) !important; /* Clean white */
+  color: var(--color-text) !important;
 }
 
 .color-background-2 {
-  background-color: var(--color-background-alt);
-  color: var(--color-text);
+  background-color: var(--color-background-alt) !important; /* Warm off-white */
+  color: var(--color-text) !important;
 }
 
 .color-inverse {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+  background-color: var(--color-primary) !important; /* Dark charcoal - NO BLUE */
+  color: var(--color-secondary) !important;
 }
 
 .color-inverse h1,
