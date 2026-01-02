@@ -17,14 +17,13 @@
   --color-success: #2d5016;
   --color-sustainability: #4a7c59; /* Natural green */
   --color-earth: #8b6f47; /* Earthy brown accent */
-  --color-navy: #1e3a5f; /* Deep navy for contrast */
   
-  /* Color Scheme Definitions */
-  --color-accent-1: var(--color-accent);
-  --color-accent-2: var(--color-sustainability);
-  --color-background-1: var(--color-background);
-  --color-background-2: var(--color-background-alt);
-  --color-inverse: var(--color-primary);
+  /* Color Scheme Definitions - NO BLUE, only greens, greys, earth tones */
+  --color-accent-1: var(--color-sustainability); /* Green for accent sections */
+  --color-accent-2: var(--color-earth); /* Earthy brown for variety */
+  --color-background-1: var(--color-background); /* Clean white */
+  --color-background-2: var(--color-background-alt); /* Warm off-white */
+  --color-inverse: var(--color-primary); /* Dark charcoal for dark sections */
   
   /* Modern Typography */
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
@@ -312,18 +311,17 @@ a:hover {
   text-align: right;
 }
 
-.gradient {
-  background: linear-gradient(180deg, rgba(250, 250, 248, 0) 0%, rgba(250, 250, 248, 0.95) 100%);
-}
+/* Removed gradient class - using solid colors for consistency */
 
-/* Color Scheme Classes */
+/* Color Scheme Classes - Consistent with men's sustainable fashion palette */
 .color-accent-1 {
-  background-color: var(--color-background);
+  background-color: rgba(74, 124, 89, 0.08); /* Subtle green tint */
   color: var(--color-text);
+  border-top: 1px solid rgba(74, 124, 89, 0.15);
 }
 
 .color-accent-2 {
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background-alt); /* Warm off-white */
   color: var(--color-text);
 }
 
