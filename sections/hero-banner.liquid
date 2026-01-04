@@ -74,6 +74,32 @@
   </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Remove gap between hero and next section
+    const heroSection = document.querySelector('.hero-banner')?.closest('.shopify-section');
+    if (heroSection) {
+      const nextSection = heroSection.nextElementSibling;
+      if (nextSection && nextSection.classList.contains('shopify-section')) {
+        nextSection.style.paddingTop = '0';
+        nextSection.style.marginTop = '0';
+        
+        // Also remove padding from the section content
+        const sectionContent = nextSection.querySelector('.collection-tiles, .section');
+        if (sectionContent) {
+          sectionContent.style.paddingTop = '0';
+        }
+      }
+    }
+    
+    // Ensure hero section wrapper has no spacing
+    if (heroSection) {
+      heroSection.style.margin = '0';
+      heroSection.style.padding = '0';
+    }
+  });
+</script>
+
 {% schema %}
 {
   "name": "Hero Banner",

@@ -30,15 +30,15 @@
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
   
-  /* Refined Spacing for Modern Luxury */
+  /* Refined Spacing for Modern Luxury - Tightened for better flow */
   --spacing-unit: 1rem;
   --spacing-xs: calc(var(--spacing-unit) * 0.5);
   --spacing-sm: calc(var(--spacing-unit) * 1);
-  --spacing-md: calc(var(--spacing-unit) * 2);
-  --spacing-lg: calc(var(--spacing-unit) * 4);
-  --spacing-xl: calc(var(--spacing-unit) * 6);
-  --spacing-xxl: calc(var(--spacing-unit) * 8);
-  --spacing-xxxl: calc(var(--spacing-unit) * 12);
+  --spacing-md: calc(var(--spacing-unit) * 1.5);
+  --spacing-lg: calc(var(--spacing-unit) * 2.5);
+  --spacing-xl: calc(var(--spacing-unit) * 4);
+  --spacing-xxl: calc(var(--spacing-unit) * 5);
+  --spacing-xxxl: calc(var(--spacing-unit) * 7);
   
   /* Modern Border Radius */
   --border-radius: 0;
@@ -56,6 +56,7 @@
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
   --shadow-luxury: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-premium: 0 24px 64px rgba(0, 0, 0, 0.15);
   
   --page-width: 140rem;
   --page-width-margin: 3rem;
@@ -69,11 +70,117 @@
   padding: 0;
 }
 
+/* ===========================================
+   CRITICAL FIX: Remove ALL unwanted black bars
+   =========================================== */
+
+/* Hide Shopify preview bar */
+#preview-bar-iframe,
+.shopify-preview-bar,
+#admin-bar-iframe,
+iframe[src*="preview_bar"],
+[id*="PreviewBar"],
+[class*="preview-bar"],
+[data-preview-bar],
+body > iframe:first-child {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+
+/* CRITICAL: Reset ALL section group wrappers to transparent */
+.shopify-section-group-header-group,
+.shopify-section-group-footer-group,
+[class*="shopify-section-group"],
+#shopify-section-sections--header,
+#shopify-section-sections--footer,
+[id*="shopify-section-sections"],
+.shopify-section-group-header-group > *,
+.shopify-section-group-footer-group > * {
+  background: transparent !important;
+  background-color: transparent !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Target the specific section wrapper that's creating gaps */
+#MainContent > .shopify-section:first-child + .shopify-section:empty,
+.shopify-section:has(.section:empty),
+.shopify-section:not(:has(*:not(.page-width):visible)),
+.shopify-section:not(:has(section, article, h1, h2, h3, h4, h5, h6, p, img, form, button, a:not([rel="stylesheet"]))),
+.shopify-section:has(.product-grid:empty),
+.shopify-section:not(:has(.product-grid__items)):has(.product-grid),
+.shopify-section:has(> :only-child:is(link, style, script)) {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* CRITICAL: Ensure ALL shopify sections have transparent background by default */
+.shopify-section {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* CRITICAL: Only apply backgrounds to sections that CONTAIN colored elements */
+.shopify-section:has(.color-inverse) {
+  background: transparent !important;
+}
+
+.shopify-section:has(.color-background-2) {
+  background: transparent !important;
+}
+
+/* CRITICAL: Remove any dark backgrounds from section wrappers */
+#shopify-section-header-group-header,
+#shopify-section-footer-group-footer,
+[id*="shopify-section-header"],
+[id*="shopify-section-footer"],
+[class*="section-group"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Force first visible content to start at very top */
+body > *:first-child,
+main:first-child,
+#MainContent > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Pull content to very top of viewport */
+body {
+  margin-top: 0 !important;
+  background-color: var(--color-background) !important;
+}
+
+/* Ensure MainContent has no background interference */
+#MainContent,
+.content-for-layout {
+  background: transparent !important;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -86,13 +193,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "kern" 1, "liga" 1;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
 
-/* Homepage - dark background to match hero */
+/* Homepage - ensure clean white background, hero has its own dark styling */
 body:has(.hero-banner) {
-  background-color: #1a1a1a;
+  background-color: var(--color-background);
+}
+
+/* CRITICAL: Remove gap between hero and next section */
+body:has(.hero-banner) .hero-banner + .shopify-section,
+body:has(.hero-banner) .shopify-section:has(.hero-banner) + .shopify-section,
+body:has(.hero-banner) #MainContent > .shopify-section:has(.hero-banner) + .shopify-section {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Ensure collection tiles section has no top padding when after hero */
+body:has(.hero-banner) .shopify-section:has(.collection-tiles) {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* CRITICAL: Ensure no gaps between any sections on homepage */
+body:has(.hero-banner) #MainContent > .shopify-section {
+  margin-top: 0 !important;
+}
+
+body:has(.hero-banner) #MainContent > .shopify-section:not(:has(.hero-banner)):first-of-type {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 /* Modern Typography */
@@ -110,12 +245,14 @@ h1 {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.1;
+  margin-bottom: var(--spacing-md);
 }
 h2 { 
   font-size: clamp(3.6rem, 4.5vw, 5.6rem); 
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.2;
+  margin-bottom: var(--spacing-md);
 }
 h3 { 
   font-size: clamp(2.8rem, 3.5vw, 4rem); 
@@ -145,6 +282,8 @@ h6 {
 
 p {
   margin-bottom: var(--spacing-sm);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -258,7 +397,36 @@ a:hover {
 }
 
 .section {
-  padding: var(--spacing-xxl) 0;
+  padding: var(--spacing-xl) 0;
+}
+
+/* Hero section should have NO padding and NO background overflow */
+.hero-section,
+section:has(.hero-banner) {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+/* Remove padding from shopify section wrapper around hero */
+.shopify-section:has(.hero-banner) {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+/* Hero section should have no padding - flush with edges */
+.hero-banner.section,
+.section.hero-banner {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* CRITICAL: Hero banner with color-inverse should NOT show background outside viewport */
+.hero-banner.color-inverse {
+  background: transparent !important;
 }
 
 .section--full-width {
@@ -332,6 +500,19 @@ a:hover {
   border-top: 1px solid rgba(74, 124, 89, 0.15);
 }
 
+/* Header should never show background when hidden */
+.header:not(.scrolled) {
+  background: transparent !important;
+}
+
+.header:not(.scrolled).color-accent-1,
+.header:not(.scrolled).color-accent-2,
+.header:not(.scrolled).color-background-1,
+.header:not(.scrolled).color-background-2,
+.header:not(.scrolled).color-inverse {
+  background: transparent !important;
+}
+
 .color-accent-1 * {
   color: var(--color-text) !important;
 }
@@ -356,8 +537,48 @@ a:hover {
 }
 
 .color-inverse {
-  background-color: var(--color-primary) !important; /* Dark charcoal - NO BLUE */
-  color: var(--color-secondary) !important;
+  background-color: var(--color-primary); /* Dark charcoal - NO BLUE */
+  color: var(--color-secondary);
+}
+
+/* Hide empty section groups and prevent unwanted dark backgrounds */
+.shopify-section-group-header-group,
+.shopify-section-group-footer-group {
+  background: transparent !important;
+}
+
+/* Ensure section wrappers don't have backgrounds or take space when empty */
+.shopify-section {
+  background: transparent !important;
+}
+
+/* CRITICAL: Collapse empty shopify-section wrappers */
+.shopify-section:empty,
+.shopify-section:not(:has(*)),
+.shopify-section:not(:has(section, .section, article, h1, h2, h3, h4, h5, h6, p, img, form, button, a, .grid)) {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* AGGRESSIVE: Hide sections with no meaningful content */
+.shopify-section:empty,
+section:empty,
+.editorial-gallery:not(:has(.editorial-gallery__item)),
+.featured-collection:not(:has(.product-card)),
+.brand-story:not(:has(.brand-story__content)),
+.testimonials:not(:has(.testimonial)),
+section:not(:has(h1,h2,h3,h4,h5,h6,p,img,form,button,a)):not(.hero-banner):not(.hero-section) {
+  display: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
 }
 
 .color-inverse h1,
@@ -391,6 +612,15 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
   }
 }
 
@@ -475,12 +705,12 @@ html {
 /* Responsive */
 /* No body padding - hero section starts at top */
 body {
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 
 /* Only add padding if header is visible (scrolled) */
 body:has(.header.scrolled) {
-  padding-top: 0; /* Header is fixed, doesn't need body padding */
+  padding-top: 0 !important; /* Header is fixed, doesn't need body padding */
 }
 
 @media screen and (max-width: 989px) {
@@ -489,7 +719,7 @@ body:has(.header.scrolled) {
   }
   
   body {
-    padding-top: 8rem;
+    padding-top: 0 !important;
   }
   
   h1 { font-size: 4.8rem; }
@@ -507,7 +737,7 @@ body:has(.header.scrolled) {
   }
   
   body {
-    padding-top: 7.5rem;
+    padding-top: 0 !important;
   }
   
   h1 { font-size: 3.6rem; }

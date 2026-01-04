@@ -17,6 +17,18 @@
   background: transparent !important;
 }
 
+/* CRITICAL: Ensure hero section wrapper has no spacing */
+.shopify-section:has(.hero-banner),
+#shopify-section-hero,
+.shopify-section:first-child:has(.hero-banner) {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+}
+
 .hero-banner__media {
   position: absolute;
   top: 0;
