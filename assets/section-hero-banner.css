@@ -1,34 +1,20 @@
-/* Luxury Hero Banner Section */
-
+/* Hero Banner - Mission-Focused Design */
 .hero-banner {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   height: 100vh;
   min-height: 100vh;
   max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  background: #0a0a0a;
-  margin: 0;
-  padding: 0;
-}
-
-.hero-banner::before {
-  content: '';
-  position: absolute;
+  margin: 0 !important;
+  padding: 0 !important;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center, rgba(45, 80, 22, 0.15) 0%, transparent 70%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-@keyframes subtleGradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  /* Background comes from media, not color scheme */
+  background: transparent !important;
 }
 
 .hero-banner__media {
@@ -38,19 +24,16 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  overflow: hidden;
 }
 
-.hero-banner__media img,
-.hero-banner__media svg {
+.hero-banner__media img {
   width: 100%;
   height: 100%;
+  min-height: 100%;
   object-fit: cover;
-}
-
-.hero-banner__media svg {
-  background: var(--color-background-alt);
-  opacity: 0.4;
-  filter: brightness(0) saturate(100%) invert(0);
+  object-position: center;
+  display: block;
 }
 
 .hero-banner__overlay {
@@ -59,144 +42,197 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(26, 26, 26, 0.3) 0%, rgba(26, 26, 26, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
   z-index: 1;
-  pointer-events: none;
-}
-
-.hero-banner:not(:has(.hero-banner__media img)) .hero-banner__overlay {
-  background: linear-gradient(135deg, rgba(74, 124, 89, 0.1) 0%, rgba(26, 26, 26, 0.3) 100%);
 }
 
 .hero-banner__content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 2rem var(--page-width-margin);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.hero-banner__box {
-  max-width: 90rem;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  padding: var(--spacing-lg);
+  box-sizing: border-box;
 }
 
+.hero-banner__box {
+  max-width: 90rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
 
-.hero-banner__subheading {
-  font-size: clamp(1rem, 1.2vw, 1.3rem);
-  font-weight: 400;
-  font-family: var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  margin: 0;
-  color: var(--color-sustainability);
-  opacity: 0.9;
-  text-shadow: none;
-  position: relative;
+.hero-banner__box--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-banner__box--center {
+  align-items: center;
+  text-align: center;
+}
+
+.hero-banner__box--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Eyebrow Text */
+.hero-banner__eyebrow {
   display: inline-block;
-  margin-bottom: 1.5rem;
-}
-
-.hero-banner__subheading::after {
-  content: '';
-  position: absolute;
-  bottom: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-sustainability), transparent);
-}
-
-.hero-banner__heading {
-  margin: 0;
-  color: var(--color-secondary);
-  font-size: clamp(5rem, 10vw, 11rem);
-  font-weight: 700;
-  letter-spacing: -0.06em;
-  line-height: 0.95;
-  text-shadow: none;
-  font-family: var(--font-heading);
-  position: relative;
-}
-
-/* Removed span wrapper - direct heading styling */
-
-.hero-banner__text {
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
-  line-height: 1.7;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.85);
-  opacity: 1;
-  font-weight: 300;
-  max-width: 70rem;
-  margin-left: auto;
-  margin-right: auto;
   font-family: var(--font-body);
-  letter-spacing: -0.01em;
-  text-shadow: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.8rem 1.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  backdrop-filter: blur(8px);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+/* Main Heading */
+.hero-banner__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 10vw, 12rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* Mission Statement - The Key Differentiator */
+.hero-banner__mission {
+  font-family: var(--font-body);
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  max-width: 70rem;
+  margin: var(--spacing-sm) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: rgba(45, 80, 22, 0.3);
+  border-left: 3px solid var(--color-sustainability);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Supporting Subtext */
+.hero-banner__subtext {
+  font-family: var(--font-body);
+  font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 50rem;
+  margin: 0;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+/* CTA Buttons */
+.hero-banner__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 .hero-banner__button {
-  margin: 0;
-  border: 1px solid var(--color-sustainability);
-  color: var(--color-secondary);
-  background-color: transparent;
-  font-weight: 500;
-  padding: 1.6rem 4rem;
-  box-shadow: none;
-  transition: all var(--transition-base);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 1.1rem;
-  position: relative;
-  overflow: hidden;
+  min-width: 18rem;
+  padding: 1.8rem 3.6rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  border-radius: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-banner__button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
+.hero-banner__button.button--primary {
+  background: #ffffff;
+  color: var(--color-primary);
+  border: 2px solid #ffffff;
+}
+
+.hero-banner__button.button--primary:hover {
   background: var(--color-sustainability);
-  transition: left var(--transition-base);
-  z-index: -1;
-}
-
-.hero-banner__button:hover::before {
-  left: 0;
-}
-
-.hero-banner__button:hover {
-  color: var(--color-secondary);
+  color: #ffffff;
   border-color: var(--color-sustainability);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.hero-banner__button::before {
-  background: var(--color-accent-dark);
+.hero-banner__button--secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
 }
 
-.hero-banner__button:hover {
-  color: var(--color-secondary);
-  border-color: var(--color-accent-dark);
-  background-color: var(--color-accent-dark);
+.hero-banner__button--secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(74, 124, 89, 0.4);
+}
+
+/* Scroll Indicator */
+.hero-banner__scroll-indicator {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: fadeInUp 1s ease-out 0.8s both;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.hero-banner__scroll-indicator:hover {
+  color: #ffffff;
+}
+
+.hero-banner__scroll-indicator svg {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
 }
 
 @keyframes fadeInUp {
@@ -210,54 +246,89 @@
   }
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
 @media screen and (max-width: 989px) {
   .hero-banner {
-    height: 100vh;
-    min-height: 100vh;
+    height: 100svh;
+    min-height: 100svh;
+  }
+  
+  .hero-banner__content {
+    padding: var(--spacing-md);
   }
   
   .hero-banner__box {
-    gap: 1.5rem;
+    gap: var(--spacing-sm);
   }
   
-  .hero-banner__subheading {
-    font-size: 1.1rem;
+  .hero-banner__mission {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1.6rem;
+  }
+  
+  .hero-banner__ctas {
+    flex-direction: column;
+    width: 100%;
   }
   
   .hero-banner__button {
-    padding: 1.2rem 2.8rem;
-    font-size: 1.1rem;
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .hero-banner__scroll-indicator {
+    bottom: 2rem;
   }
 }
 
 @media screen and (max-width: 749px) {
-  .hero-banner {
-    height: 100vh;
-    min-height: 100vh;
-  }
-  
-  .hero-banner__content {
-    padding: 2rem 1.5rem;
-  }
-  
-  .hero-banner__box {
-    gap: 1.2rem;
-    max-width: 100%;
-  }
-  
-  .hero-banner__subheading {
+  .hero-banner__eyebrow {
     font-size: 1rem;
-    letter-spacing: 0.15em;
+    padding: 0.6rem 1.2rem;
   }
   
-  .hero-banner__text {
-    max-width: 100%;
+  .hero-banner__heading {
+    font-size: clamp(4rem, 12vw, 6rem);
+  }
+  
+  .hero-banner__mission {
+    font-size: 1.4rem;
+    padding: var(--spacing-sm);
+  }
+  
+  .hero-banner__subtext {
+    font-size: 1.3rem;
   }
   
   .hero-banner__button {
-    padding: 1.2rem 2.4rem;
-    font-size: 1rem;
+    padding: 1.4rem 2.4rem;
+    font-size: 1.2rem;
   }
 }
 
-
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-banner__heading,
+  .hero-banner__mission,
+  .hero-banner__subtext,
+  .hero-banner__ctas,
+  .hero-banner__eyebrow,
+  .hero-banner__scroll-indicator {
+    animation: none;
+  }
+  
+  .hero-banner__scroll-indicator svg {
+    animation: none;
+  }
+}

@@ -3,64 +3,138 @@
     "hero": {
       "type": "hero-banner",
       "settings": {
+        "eyebrow": "Sustainable Fashion with Purpose",
         "heading": "by 2050",
-        "subheading": "Sustainable Men's Fashion",
-        "text": "<p>Timeless style, crafted for the conscious man. Premium sustainable fashion that doesn't compromise on quality or design.</p>",
-        "button_label": "Shop Collection",
-        "button_link": "/collections/all",
+        "mission_statement": "Every purchase is reinvested through VACSO to accelerate sustainable consumer products.",
+        "subtext": "Premium men's fashion that funds a sustainable future.",
+        "button_label_1": "Shop Collection",
+        "button_link_1": "/collections/all",
+        "button_label_2": "How Reinvestment Works",
+        "button_link_2": "/pages/about",
         "image": "",
-        "overlay_opacity": 0,
+        "overlay_opacity": 55,
         "text_alignment": "center",
+        "show_scroll_indicator": true,
         "color_scheme": "inverse"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "collection_tiles": {
+      "type": "collection-tiles",
       "settings": {
-        "title": "New Arrivals",
-        "collection": "",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "show_view_all": true,
-        "heading_size": "h1"
-      }
+        "eyebrow": "Shop by Category",
+        "heading": "Explore Collections",
+        "subheading": "Find your perfect sustainable style",
+        "heading_size": "h1",
+        "color_scheme": "background-2"
+      },
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "title": "Shirts",
+            "description": "Premium organic cotton shirts"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "title": "Trousers",
+            "description": "Sustainable comfort & style"
+          }
+        },
+        "collection_3": {
+          "type": "collection",
+          "settings": {
+            "title": "Outerwear",
+            "description": "Built to last, made to protect"
+          }
+        }
+      },
+      "block_order": ["collection_1", "collection_2", "collection_3"]
     },
     "sustainability_showcase": {
       "type": "sustainability-showcase",
       "settings": {
-        "heading": "Our Commitment to Sustainability",
-        "description": "<p>Every piece is crafted with the future in mind. We use sustainable materials, ethical practices, and innovative technologies to minimize our environmental impact while delivering premium quality men's fashion.</p>",
-        "show_metrics": true,
-        "button_label": "Learn More",
-        "button_link": "/pages/sustainability",
+        "eyebrow": "Our Mission",
+        "heading": "Fashion That Funds the Future",
+        "heading_size": "h1",
+        "description": "<p>We're not just another fashion brand. Every purchase powers VACSO's mission to develop sustainable consumer products and systems for a better future.</p>",
+        "show_reinvestment_message": true,
+        "reinvestment_title": "100% Profit Reinvestment",
+        "reinvestment_text": "Every purchase directly funds VACSO initiatives developing next-generation sustainable consumer products.",
+        "impact_status": "Impact Tracking Launching Q2 2026",
+        "impact_tooltip": "We are building a transparent impact tracking system to show exactly how your purchase contributes to sustainability initiatives. This includes: carbon offset calculations, water savings, materials sourced, and VACSO projects funded.",
+        "show_tracking_preview": true,
+        "button_label": "Learn About Our Mission",
+        "button_link": "/pages/about",
         "color_scheme": "background-2"
       }
     },
-    "ai_recommendations": {
-      "type": "ai-recommendations",
+    "sustainability_proof": {
+      "type": "sustainability-proof",
       "settings": {
-        "heading": "Recommended for You",
-        "enable_ai": true,
-        "products_to_show": 6
-      }
+        "eyebrow": "Verified Sustainability",
+        "heading": "Proof of Sustainability",
+        "description": "We back up every sustainability claim with transparent, verifiable data. No greenwashing—just facts.",
+        "heading_size": "h1",
+        "methodology_text": "All sustainability claims are verified through third-party certifications and annual audits. Material certifications include GOTS, OEKO-TEX, and GRS. Factory audits are conducted by independent organizations following SA8000 standards.",
+        "color_scheme": "background-1"
+      },
+      "blocks": {
+        "materials": {
+          "type": "pillar",
+          "settings": {
+            "icon": "materials",
+            "title": "Materials",
+            "claims": "100% organic cotton (GOTS certified)|Recycled polyester from ocean plastics|Natural plant-based dyes",
+            "certification": "GOTS Certified"
+          }
+        },
+        "manufacturing": {
+          "type": "pillar",
+          "settings": {
+            "icon": "manufacturing",
+            "title": "Manufacturing",
+            "claims": "Fair wage factories (SA8000 audited)|Solar-powered facilities|Zero-waste pattern cutting",
+            "certification": "SA8000"
+          }
+        },
+        "packaging": {
+          "type": "pillar",
+          "settings": {
+            "icon": "packaging",
+            "title": "Packaging",
+            "claims": "100% recycled cardboard|Compostable mailer bags|Zero single-use plastic",
+            "certification": "FSC Certified"
+          }
+        },
+        "shipping": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shipping",
+            "title": "Shipping",
+            "claims": "Carbon-neutral delivery|Consolidated shipping|Local fulfillment centers",
+            "certification": "Climate Neutral"
+          }
+        }
+      },
+      "block_order": ["materials", "manufacturing", "packaging", "shipping"]
     },
-    "brand_story": {
-      "type": "brand-story",
+    "newsletter": {
+      "type": "newsletter-signup",
       "settings": {
-        "heading": "The 2050 Vision",
-        "content": "<p>We believe men's fashion should be timeless, sustainable, and built to last. Every piece in our collection is designed for the modern man who values quality, style, and environmental responsibility. Crafted with eco-friendly materials and ethical practices, our garments are made to stand the test of time.</p>",
-        "image": "",
-        "image_position": "right"
+        "heading": "Stay in the Loop",
+        "text": "<p>Get impact updates, early access to new drops, and insights into VACSO-funded initiatives.</p>",
+        "button_label": "Subscribe",
+        "show_social": true
       }
     }
   },
   "order": [
     "hero",
-    "featured_collection",
+    "collection_tiles",
     "sustainability_showcase",
-    "ai_recommendations",
-    "brand_story"
+    "sustainability_proof",
+    "newsletter"
   ]
 }
-
-

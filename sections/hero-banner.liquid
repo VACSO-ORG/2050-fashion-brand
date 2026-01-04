@@ -1,6 +1,6 @@
 {{ 'section-hero-banner.css' | asset_url | stylesheet_tag }}
 
-<div class="hero-banner color-{{ section.settings.color_scheme }}">
+<div class="hero-banner color-{{ section.settings.color_scheme }}" id="hero-banner">
   <div class="hero-banner__media media media--overlay">
     {%- if section.settings.image != blank -%}
       <img
@@ -16,33 +16,60 @@
         sizes="100vw"
         alt="{{ section.settings.image.alt | escape }}"
         loading="eager"
+        fetchpriority="high"
         width="{{ section.settings.image.width }}"
         height="{{ section.settings.image.height }}"
       >
     {%- else -%}
-      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      <img
+        src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=2000&h=1333&fit=crop&q=80"
+        srcset="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=750&h=500&fit=crop&q=80 750w,
+                https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1500&h=1000&fit=crop&q=80 1500w,
+                https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=2000&h=1333&fit=crop&q=80 2000w"
+        sizes="100vw"
+        alt="Premium sustainable clothing collection"
+        loading="eager"
+        fetchpriority="high"
+        width="2000"
+        height="1333"
+        style="object-fit: cover; width: 100%; height: 100%;"
+      >
     {%- endif -%}
     <div class="hero-banner__overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }}"></div>
   </div>
 
   <div class="hero-banner__content page-width">
-    <div class="hero-banner__box">
-      {%- if section.settings.subheading != blank -%}
-        <p class="hero-banner__subheading">{{ section.settings.subheading | escape }}</p>
+    <div class="hero-banner__box hero-banner__box--{{ section.settings.text_alignment }}">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="hero-banner__eyebrow">{{ section.settings.eyebrow | escape }}</span>
       {%- endif -%}
+      
       {%- if section.settings.heading != blank -%}
-        <h1 class="hero-banner__heading" data-text="{{ section.settings.heading | escape }}">
+        <h1 class="hero-banner__heading">
           {{ section.settings.heading | escape }}
         </h1>
       {%- endif -%}
-      {%- if section.settings.text != blank -%}
-        <div class="hero-banner__text rte">{{ section.settings.text }}</div>
+      
+      {%- if section.settings.mission_statement != blank -%}
+        <p class="hero-banner__mission">{{ section.settings.mission_statement }}</p>
       {%- endif -%}
-      {%- if section.settings.button_label != blank -%}
-        <a href="{{ section.settings.button_link }}" class="button hero-banner__button">
-          {{ section.settings.button_label | escape }}
-        </a>
+      
+      {%- if section.settings.subtext != blank -%}
+        <p class="hero-banner__subtext">{{ section.settings.subtext | escape }}</p>
       {%- endif -%}
+      
+      <div class="hero-banner__ctas">
+        {%- if section.settings.button_label_1 != blank -%}
+          <a href="{{ section.settings.button_link_1 }}" class="button button--primary hero-banner__button">
+            {{ section.settings.button_label_1 | escape }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.button_label_2 != blank -%}
+          <a href="{{ section.settings.button_link_2 }}" class="button button--secondary hero-banner__button hero-banner__button--secondary">
+            {{ section.settings.button_label_2 | escape }}
+          </a>
+        {%- endif -%}
+      </div>
     </div>
   </div>
 </div>
@@ -51,12 +78,36 @@
 {
   "name": "Hero Banner",
   "tag": "section",
-  "class": "section",
+  "class": "hero-section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Media"
+    },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Image overlay opacity",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "default": "Sustainable Fashion with Purpose",
+      "label": "Eyebrow text"
     },
     {
       "type": "text",
@@ -65,84 +116,81 @@
       "label": "Heading"
     },
     {
-      "type": "text",
-      "id": "subheading",
-      "default": "Sustainable Luxury",
-      "label": "Subheading"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "default": "<p>Timeless elegance, reimagined for the future</p>",
-      "label": "Description"
+      "type": "textarea",
+      "id": "mission_statement",
+      "default": "Every purchase is reinvested through VACSO to accelerate sustainable consumer products.",
+      "label": "Mission statement",
+      "info": "Your core value proposition - what makes you different"
     },
     {
       "type": "text",
-      "id": "button_label",
-      "default": "Explore Collection",
+      "id": "subtext",
+      "default": "Premium men's fashion that funds a sustainable future.",
+      "label": "Supporting subtext"
+    },
+    {
+      "type": "header",
+      "content": "Primary CTA"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "default": "Shop Collection",
       "label": "Button label"
     },
     {
       "type": "url",
-      "id": "button_link",
+      "id": "button_link_1",
+      "default": "/collections/all",
       "label": "Button link"
     },
     {
-      "type": "range",
-      "id": "overlay_opacity",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "Image overlay opacity",
-      "default": 40
+      "type": "header",
+      "content": "Secondary CTA"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "default": "How Reinvestment Works",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
     },
     {
       "type": "select",
       "id": "text_alignment",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
       ],
       "default": "center",
       "label": "Text alignment"
     },
     {
+      "type": "checkbox",
+      "id": "show_scroll_indicator",
+      "default": true,
+      "label": "Show scroll indicator"
+    },
+    {
       "type": "select",
       "id": "color_scheme",
       "options": [
-        {
-          "value": "accent-1",
-          "label": "Accent 1"
-        },
-        {
-          "value": "accent-2",
-          "label": "Accent 2"
-        },
-        {
-          "value": "background-1",
-          "label": "Background 1"
-        },
-        {
-          "value": "background-2",
-          "label": "Background 2"
-        },
-        {
-          "value": "inverse",
-          "label": "Inverse"
-        }
+        { "value": "accent-1", "label": "Accent 1" },
+        { "value": "accent-2", "label": "Accent 2" },
+        { "value": "background-1", "label": "Background 1" },
+        { "value": "background-2", "label": "Background 2" },
+        { "value": "inverse", "label": "Inverse" }
       ],
-      "default": "background-1",
+      "default": "inverse",
       "label": "Color scheme"
     }
   ],
@@ -153,5 +201,3 @@
   ]
 }
 {% endschema %}
-
-
